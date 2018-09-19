@@ -1,3 +1,4 @@
+
 # Install the apt prerequisites
 addons:
   apt:
@@ -11,7 +12,7 @@ install:
 # Build the website
 script:
   - cd src/app
-  - ../binaries/hugo
+  - ./binaries/hugo
 
 # Deploy to GitHub pages
 deploy:
