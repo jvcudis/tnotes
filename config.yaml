@@ -1,4 +1,5 @@
-baseURL: /
+baseURL: tnotes
+relativeurls: true
 languageCode: en-us
 title: My New Hugo Site
 theme: tnotes.theme
