@@ -17,10 +17,9 @@ script:
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
   verbose: true
   keep-history: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
   local-dir: public
-  target_branch: master  # branch contains blog content
   on:
-    branch: code  # branch contains Hugo generator code
+    branch: master
