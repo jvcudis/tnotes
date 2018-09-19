@@ -1,24 +1,28 @@
+# https://docs.travis-ci.com/user/deployment/pages/
+# https://docs.travis-ci.com/user/languages/python/
+language: python
 
-# Install the apt prerequisites
-addons:
-  apt:
-    packages:
-      - python-pygments
+python:
+  - "3.6"
 
-# Clean and don't fail
 install:
-  - rm -rf public || exit 0
+  # install latest release version
+  # - wget $(wget -qO- https://api.github.com/repos/gohugoio/hugo/releases/latest | sed -r -n '/browser_download_url/{/Linux-64bit.deb/{s@[^:]*:[[:space:]]*"([^"]*)".*@\1@g;p}}')
+  - wget -qO- https://api.github.com/repos/gohugoio/hugo/releases/latest | sed -r -n '/browser_download_url/{/Linux-64bit.deb/{s@[^:]*:[[:space:]]*"([^"]*)".*@\1@g;p}}' | xargs wget
+  - sudo dpkg -i hugo*.deb
+  - pip install Pygments
+  - rm -rf public 2> /dev/null
 
-# Build the website
 script:
-  - cd src/app
-  - ./binaries/hugo
+  - hugo
 
-# Deploy to GitHub pages
 deploy:
   provider: pages
-  skip_cleanup: true
-  local_dir: public
-  github_token: ${GITHUB_TOKEN}
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  verbose: true
+  keep-history: true
+  local-dir: public
+  target_branch: master  # branch contains blog content
   on:
-    branch: master
+    branch: code  # branch contains Hugo generator code
