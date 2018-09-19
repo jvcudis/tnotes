@@ -1,1 +1,46 @@
-test2
+{{ partial "head.html" . }}
+<div class="sidebar container">
+  <div class="sidebar__title">
+    <h1>t.notes</h1>
+  </div>
+  <div class="sidebar__topics">
+    cv | home
+  </div>
+</div>
+<div class="content container">
+  <div>
+    <div class="content__header">
+      <i class="fas fa-bars"></i>
+    </div>
+    <section class="content__post">
+      <h4>Golang : How to install Golang?</h4>
+      <h1>Upload files from browser using pre-signed URLS</h1>
+      <p>
+        Using presigned URLs, you can allow a browser to upload a file directly to S3 without exposing your S3 credentials to the user.
+        <br \>
+        The following is an annotated example of this using minio-js.
+      </p>
+    </section>
+    <footer>
+      < prev post | next post >
+    </footer>
+  </div>
+
+  <div>
+    <div class="social-media-container">
+      share post
+      <a>
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <div class="topic-container">
+      <ul class="topics">
+        <li><span>Javascript</span></li>
+        <li><span>Terraform</span></li>
+        <li><span>TeamCity</span></li>
+        <li><span>Travis</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+{{ partial "foot.html" . }}
