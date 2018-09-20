@@ -8,9 +8,9 @@
   <div class="topic-container">
     <ul class="topics">
       {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
-          {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
-              <li><span><a href="{{ .RelPermalink }}">{{ $name }}</a></span></li>
-          {{ end }}
+        {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+          <li><span><a href="{{ .RelPermalink }}">{{ $name }}</a></span></li>
+        {{ end }}
       {{ end }}
     </ul>
   </div>
