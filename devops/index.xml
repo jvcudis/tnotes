@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devops on Technical Notes</title>
+    <link>/devops/</link>
+    <description>Recent content in Devops on Technical Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 18 Sep 2018 20:01:04 +1200</lastBuildDate>
+    
+	<atom:link href="/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DevOps 101</title>
+      <link>/devops/101/</link>
+      <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
+      
+      <guid>/devops/101/</guid>
+      <description>DevOps 101 yo!</description>
+    </item>
+    
+  </channel>
+</rss>
