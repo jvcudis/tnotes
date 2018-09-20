@@ -15,7 +15,6 @@ install:
 
 script:
   - hugo
-  - sh -c 'if [ -f "public/config.yaml" ]; then echo "file exists!" fi'
 
 deploy:
   provider: pages
