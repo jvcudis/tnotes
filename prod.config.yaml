@@ -1,8 +1,8 @@
 baseURL: ""
 relativeurls: true
 languageCode: en-us
-title: My New Hugo Site
+title: Technical Notes
 theme: tnotes.theme
 
 params:
-  subdomain: ""
+  subdomain: "/tnotes"
