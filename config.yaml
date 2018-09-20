@@ -3,3 +3,6 @@ relativeurls: true
 languageCode: en-us
 title: My New Hugo Site
 theme: tnotes.theme
+
+isProduction: true
+subDomain: "\tnotes"
