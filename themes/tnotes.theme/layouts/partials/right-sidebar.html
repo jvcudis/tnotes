@@ -7,10 +7,11 @@
   </div>
   <div class="topic-container">
     <ul class="topics">
-      <li><span>Javascript</span></li>
-      <li><span>Terraform</span></li>
-      <li><span>TeamCity</span></li>
-      <li><span>Travis</span></li>
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+          {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+              <li><span><a href="{{ .RelPermalink }}">{{ $name }}</a></span></li>
+          {{ end }}
+      {{ end }}
     </ul>
   </div>
 </div>
