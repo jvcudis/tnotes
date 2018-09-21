@@ -4,9 +4,7 @@ languageCode: en-us
 title: My New Hugo Site
 theme: tnotes.theme
 
-links:
-  home: "https://www.anncudis.com/"
-  cv: "https://www.anncudis.com/programmer/cv/"
-
 params:
   subdomain: ""
+  home: "https://www.anncudis.com/"
+  cv: "https://www.anncudis.com/programmer/cv/"

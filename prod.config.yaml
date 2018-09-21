@@ -1,12 +1,10 @@
-baseURL: "/tnotes"
+baseURL: "/"
 relativeurls: true
 languageCode: en-us
 title: Technical Notes
 theme: tnotes.theme
 
-links:
-  home: "https://www.anncudis.com/"
-  cv: "https://www.anncudis.com/programmer/cv/"
-
 params:
   subdomain: "/tnotes"
+  home: "https://www.anncudis.com/"
+  cv: "https://www.anncudis.com/programmer/cv/"
