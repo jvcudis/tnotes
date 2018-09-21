@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Technical Notes</title>
-    <link>www.anncudis.com/tnotes/</link>
+    <link>/tnotes/</link>
     <description>Recent content on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 18 Sep 2018 20:01:04 +1200</lastBuildDate>
     
-	<atom:link href="www.anncudis.com/tnotes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tnotes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>DevOps 101</title>
-      <link>www.anncudis.com/tnotes/devops/101/</link>
+      <link>/tnotes/devops/101/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>www.anncudis.com/tnotes/devops/101/</guid>
+      <guid>/tnotes/devops/101/</guid>
       <description>DevOps 101 yo!</description>
     </item>
     
     <item>
       <title>Docker 101</title>
-      <link>www.anncudis.com/tnotes/docker/1/</link>
+      <link>/tnotes/docker/1/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>www.anncudis.com/tnotes/docker/1/</guid>
+      <guid>/tnotes/docker/1/</guid>
       <description>Docker 101 yo!</description>
     </item>
     
     <item>
       <title>Javascript 101</title>
-      <link>www.anncudis.com/tnotes/javascript/1/</link>
+      <link>/tnotes/javascript/1/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>www.anncudis.com/tnotes/javascript/1/</guid>
+      <guid>/tnotes/javascript/1/</guid>
       <description>Javascript 101 yo!</description>
     </item>
     
     <item>
       <title>TeamCity 101</title>
-      <link>www.anncudis.com/tnotes/teamcity/1/</link>
+      <link>/tnotes/teamcity/1/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>www.anncudis.com/tnotes/teamcity/1/</guid>
+      <guid>/tnotes/teamcity/1/</guid>
       <description>TeamCity 101 yo!</description>
     </item>
     
     <item>
       <title>Terraform 101</title>
-      <link>www.anncudis.com/tnotes/terraform/1/</link>
+      <link>/tnotes/terraform/1/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>www.anncudis.com/tnotes/terraform/1/</guid>
+      <guid>/tnotes/terraform/1/</guid>
       <description>Terraform 101 yo!</description>
     </item>
     
