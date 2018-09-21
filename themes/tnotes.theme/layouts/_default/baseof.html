@@ -5,9 +5,7 @@
     {{ partial "left-sidebar.html" . }}
     <div class="content container">
       <div>
-        <div class="content__header">
-          <i class="fas fa-bars"></i>
-        </div>
+        <div class="content__header"></div>
         {{ block "main" . }}{{ end }}
       </div>
       {{ partial "right-sidebar.html" . }}

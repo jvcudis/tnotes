@@ -1,15 +1,11 @@
 <div>
   <div class="social-media-container">
-    share post
-    <a>
-      <i class="fab fa-linkedin"></i>
-    </a>
   </div>
   <div class="topic-container">
     <ul class="topics">
       {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
         {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
-          <li><span><a href="{{ .RelPermalink }}">{{ $name }}</a></span></li>
+          <li><a href="{{ .RelPermalink }}">{{ $name }}</a></li>
         {{ end }}
       {{ end }}
     </ul>

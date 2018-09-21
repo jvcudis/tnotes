@@ -1,10 +1,11 @@
 <section class="content__post">
   <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
   <span>
-    {{ dateFormat "Jan 2, 2006" .Date }} ON
+    {{ dateFormat "January 2, 2006" .Date }} ON
     {{ range .Params.categories }}{{ . }}{{ end }}
   </span>
   <div class="wurds">
-    {{ .Content }}
+    {{ .Summary }}
+    <a class="more-link" href="{{ .RelPermalink }}">Read more…</a>
   </div>
 </section>

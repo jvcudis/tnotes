@@ -1,15 +1,5 @@
 {{ define "main" }}
   {{ range first 10 .Data.Pages }}
-    <section class="content__post">
-      <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-      <h5>
-        {{ dateFormat "Jan 2, 2006" .Date }},
-        {{ range .Params.categories }}{{ . }}{{ end }}
-      </h5>
-      <p>
-        {{ .Summary }}
-      </p>
-      <a href="{{ .RelPermalink }}">Read More…</a>
-    </section>
+    {{ partial "content-summary.html" . }}
   {{ end }}
 {{ end }}
