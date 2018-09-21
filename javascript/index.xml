@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascripts on Technical Notes</title>
-    <link>/javascript/</link>
+    <link>www.anncudis.com/tnotes/javascript/</link>
     <description>Recent content in Javascripts on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 18 Sep 2018 20:01:04 +1200</lastBuildDate>
     
-	<atom:link href="/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.anncudis.com/tnotes/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Javascript 101</title>
-      <link>/javascript/1/</link>
+      <link>www.anncudis.com/tnotes/javascript/1/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/javascript/1/</guid>
+      <guid>www.anncudis.com/tnotes/javascript/1/</guid>
       <description>Javascript 101 yo!</description>
     </item>
     

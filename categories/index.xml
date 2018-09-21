@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Technical Notes</title>
-    <link>/categories/</link>
+    <link>www.anncudis.com/tnotes/categories/</link>
     <description>Recent content in Categories on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="www.anncudis.com/tnotes/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Devops</title>
-      <link>/categories/devops/</link>
+      <link>www.anncudis.com/tnotes/categories/devops/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/categories/devops/</guid>
+      <guid>www.anncudis.com/tnotes/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>/categories/docker/</link>
+      <link>www.anncudis.com/tnotes/categories/docker/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/categories/docker/</guid>
+      <guid>www.anncudis.com/tnotes/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>/categories/javascript/</link>
+      <link>www.anncudis.com/tnotes/categories/javascript/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/categories/javascript/</guid>
+      <guid>www.anncudis.com/tnotes/categories/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teamcity</title>
-      <link>/categories/teamcity/</link>
+      <link>www.anncudis.com/tnotes/categories/teamcity/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/categories/teamcity/</guid>
+      <guid>www.anncudis.com/tnotes/categories/teamcity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Terraform</title>
-      <link>/categories/terraform/</link>
+      <link>www.anncudis.com/tnotes/categories/terraform/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/categories/terraform/</guid>
+      <guid>www.anncudis.com/tnotes/categories/terraform/</guid>
       <description></description>
     </item>
     

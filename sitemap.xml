@@ -3,102 +3,102 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/devops/101/</loc>
+    <loc>www.anncudis.com/tnotes/devops/101/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/docker/1/</loc>
+    <loc>www.anncudis.com/tnotes/docker/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/javascript/1/</loc>
+    <loc>www.anncudis.com/tnotes/javascript/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/teamcity/1/</loc>
+    <loc>www.anncudis.com/tnotes/teamcity/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/terraform/1/</loc>
+    <loc>www.anncudis.com/tnotes/terraform/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>www.anncudis.com/tnotes/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/devops/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/devops/</loc>
+    <loc>www.anncudis.com/tnotes/devops/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/docker/</loc>
+    <loc>www.anncudis.com/tnotes/categories/devops/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/docker/</loc>
+    <loc>www.anncudis.com/tnotes/categories/docker/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/javascript/</loc>
+    <loc>www.anncudis.com/tnotes/docker/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/javascript/</loc>
+    <loc>www.anncudis.com/tnotes/categories/javascript/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/teamcity/</loc>
+    <loc>www.anncudis.com/tnotes/javascript/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/teamcity/</loc>
+    <loc>www.anncudis.com/tnotes/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>www.anncudis.com/tnotes/teamcity/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>www.anncudis.com/tnotes/categories/teamcity/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/terraform/</loc>
+    <loc>www.anncudis.com/tnotes/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/terraform/</loc>
+    <loc>www.anncudis.com/tnotes/categories/terraform/</loc>
+    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>www.anncudis.com/tnotes/terraform/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
