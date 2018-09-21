@@ -3,102 +3,102 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/tnotes/devops/101/</loc>
+    <loc>/devops/101/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/tnotes/docker/1/</loc>
+    <loc>/docker/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/tnotes/javascript/1/</loc>
+    <loc>/javascript/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/tnotes/teamcity/1/</loc>
+    <loc>/teamcity/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/tnotes/terraform/1/</loc>
+    <loc>/terraform/1/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
   </url>
   
   <url>
-    <loc>/tnotes/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/devops/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tnotes/categories/devops/</loc>
+    <loc>/devops/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/categories/docker/</loc>
+    <loc>/categories/devops/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/docker/</loc>
+    <loc>/categories/docker/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/categories/javascript/</loc>
+    <loc>/docker/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/javascript/</loc>
+    <loc>/categories/javascript/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tnotes/teamcity/</loc>
+    <loc>/javascript/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/categories/teamcity/</loc>
+    <loc>/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/teamcity/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/</loc>
+    <loc>/categories/teamcity/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/categories/terraform/</loc>
+    <loc>/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tnotes/terraform/</loc>
+    <loc>/categories/terraform/</loc>
+    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/terraform/</loc>
     <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>

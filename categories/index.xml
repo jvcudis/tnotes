@@ -2,56 +2,56 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Technical Notes</title>
-    <link>/tnotes/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/tnotes/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Devops</title>
-      <link>/tnotes/categories/devops/</link>
+      <link>/categories/devops/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/tnotes/categories/devops/</guid>
+      <guid>/categories/devops/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>/tnotes/categories/docker/</link>
+      <link>/categories/docker/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/tnotes/categories/docker/</guid>
+      <guid>/categories/docker/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Javascript</title>
-      <link>/tnotes/categories/javascript/</link>
+      <link>/categories/javascript/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/tnotes/categories/javascript/</guid>
+      <guid>/categories/javascript/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Teamcity</title>
-      <link>/tnotes/categories/teamcity/</link>
+      <link>/categories/teamcity/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/tnotes/categories/teamcity/</guid>
+      <guid>/categories/teamcity/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Terraform</title>
-      <link>/tnotes/categories/terraform/</link>
+      <link>/categories/terraform/</link>
       <pubDate>Tue, 18 Sep 2018 20:01:04 +1200</pubDate>
       
-      <guid>/tnotes/categories/terraform/</guid>
+      <guid>/categories/terraform/</guid>
       <description></description>
     </item>
     
