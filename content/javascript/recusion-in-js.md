@@ -13,5 +13,43 @@ I hated recursion when I was .
 <how it works...>
 
 <the code...>
+```
+/*
+  This recursive function injects total rows for expanded section, category
+  and extcode rows, when specified in "keysAndTypes". Eg:
+
+  keysAndTypes = [
+    ['categories', ROW_TYPES.SECTION_TOTAL],
+    ['extcodes', ROW_TYPES.CATEGORY_TOTAL],
+    ['worksheetItems', ROW_TYPES.EXTCODE_TOTAL]
+  ]
+*/
+export const injectTotalRows = (graph, keysAndTypes) => {
+  return graph.reduce(
+    (graph, row) => {
+      if (isSection(row) || isCategory(row) || isExtcode(row)) {
+        const [ [key, type], ...otherKeys ] = keysAndTypes
+        const isExpanded = row.get(key)
+
+        graph = graph.push(
+          isExpanded && otherKeys.length
+            ? row.set(key, injectTotalRows(row.get(key), otherKeys))
+            : row
+        )
+
+        if (isExpanded) {
+          const totalRow = row.set('type', type).set(key, undefined)
+          graph = graph.push(totalRow)
+        }
+      } else {
+        graph = graph.push(row)
+      }
+
+      return graph
+    },
+    List()
+  )
+}
+```
 
 <final thoughts?>
