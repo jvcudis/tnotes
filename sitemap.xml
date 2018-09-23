@@ -3,68 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/devops/101/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docker/1/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/javascript/1/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/teamcity/1/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/terraform/1/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/devops/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/devops/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/docker/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/docker/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/javascript/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/javascript/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -74,32 +13,7 @@
   </url>
   
   <url>
-    <loc>/teamcity/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/teamcity/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/terraform/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/terraform/</loc>
-    <lastmod>2018-09-18T20:01:04+12:00</lastmod>
     <priority>0</priority>
   </url>
   
