@@ -81,7 +81,7 @@ h1 {
 h4 {
   font-size: 11px;
   text-transform: uppercase;
-  color: #122b53;
+  color: $the-blue;
   font-family: 'Letter Gothic Std', sans-serif;
   letter-spacing: 2px;
   line-height: 18px;
@@ -94,12 +94,25 @@ h4 {
   padding: 3em 3em 3em 3em;
   font-family: 'PT Sans', sans-serif;
 
+  > div:first-child {
+    flex: 2 0 0;
+  }
+
+  > div:last-child {
+    flex: 1 0 0;
+  }
+
   &__post {
     font-family: 'PT Sans', sans-serif;
     font-weight: normal;
     font-size: 16px;
     line-height: 1.2;
     color: $black-soul;
+
+    > p {
+      padding: 0;
+      margin: 0;
+    }
 
     > h1 {
       margin-bottom: 0;
