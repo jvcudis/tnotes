@@ -5,6 +5,8 @@ Categories: ["aws-training"]
 draft: false
 ---
 
+### LESSON 24
+
 EC2 has basic monitoring enabled by default which monitors the instances every **5 minutes**. You can find this by selecting the instances, selecting a specific instance and then there would be a Monitoring tab showing the basic instance metrics.[^1] To have a detailed monitoring for your instances, you have to do it on CloudWatch[^2].
 
 CloudWatch allows you to create the following:
