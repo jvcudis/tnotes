@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Technical Notes</title>
+  
+  
+  <link rel="stylesheet" href="../../scss/fonts.min.4d39d19ae6c86f3dd507ff048c753b96abc2f7f680e4939db19e5e6f248a2414.css" integrity="sha256-TTnRmubIbz3VB/8EjHU7lqvC9/aA5JOdsZ5ebySKJBQ=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.44b830f59306d337516abd35cfe594e1542090a2efac10a83b7d053db1a0803c.css" integrity="sha256-RLgw9ZMG0zdRar01z&#43;WU4VQgkKLvrBCoO30FPbGggDw=" media="screen">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+  <body>
+    <div class="sidebar container">
+  <div class="sidebar__title">
+    <h1><a href="../../">t.notes</a></h1>
+    <br />
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
+  </div>
+  <div class="sidebar__topics">
+    <h4>Built with Hugo</h4>
+    <h4>Powered by Github</h4>
+  </div>
+</div>
+
+    <div class="content container">
+      <div>
+        <div class="content__header"></div>
+        
+  <section class="content__post">
+  <h1><a href="../../aws-training/using-cloudwatch-for-ec2-monitoring/">Using CloudWatch for EC2 Monitoring</a></h1>
+  <span>
+    Nov 2, 2018 ON
+    aws-training
+  </span>
+  <div class="wurds">
+    
+
+<p>EC2 has basic monitoring enabled by default which monitors the instances every <strong>5 minutes</strong>. You can find this by selecting the instances, selecting a specific instance and then there would be a Monitoring tab showing the basic instance metrics.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup> To have a detailed monitoring for your instances, you have to do it on CloudWatch<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>.</p>
+
+<p>CloudWatch allows you to create the following:</p>
+
+<p><strong>Dashboard.</strong> Create dashboards that shows what is happening to your AWS resources. It allows you to create widgets to be added to your dashboard. The text widget is used to add labels and text to your dashboard. You can use the markdown language for text widgets. The graph widget allows you to create graphs by choosing from predefined metrics. You can select a resource (EC2 instance, S3, etc.) and the default metrics will be shown for you to select.</p>
+
+<p><strong>Alarms.</strong> Allows you to set alarms that notify when a particular thresholds are hit. For example, you want to setup an alarm for you EC2 instance whenever the CPU utilization exceeds 80%. What you have to do is create an alarm, selet the metric we want, in this case the CPU utilization metric and then define the alarm and setup the notification.<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup> The alarm created will be shown on the alarms page once created.</p>
+
+<p><strong>Events.</strong> Helps respond to state changes in your AWS resources.<sup class="footnote-ref" id="fnref:4"><a href="#fn:4">4</a></sup></p>
+
+<p><strong>Logs.</strong> Allows you to aggregate, monitor and store logs coming from your instances. To enable logging for your instances, an agent must be installed on your EC2 instance to be able for it to send CloudWatch logs.<sup class="footnote-ref" id="fnref:5"><a href="#fn:5">5</a></sup></p>
+
+<p><strong>Metrics.</strong> Instead of creating a dashboard, you will see all available metrics for all your AWS resources. By clicking the AWS resource and the metric, a graph will be shown on the page. A good way to know what are the availabe metrics for a specific resource.</p>
+
+<hr />
+
+<h5 id="important-points">IMPORTANT POINTS</h5>
+
+<ul>
+<li>Standard monitoring is <strong>5 mins</strong> while detailed monitoring is <strong>1 min</strong></li>
+<li>Dashboards allows you to see your AWS environment as a whole</li>
+<li>If no metrics are available, you can create your own metrics<sup class="footnote-ref" id="fnref:6"><a href="#fn:6">6</a></sup></li>
+<li>Alarms allows you to set alarms that notify when a particular thresholds are hit</li>
+<li>Events helps respond to state changes in your AWS resources</li>
+<li>Logs allows aggregate, monitor and store logs</li>
+<li>Metrics is an easy way of knowing the performance of your AWS resources</li>
+<li>CloudTrail vs CloudWatch. CloudTrail is for auditing, it monitors your AWS account activities while CloudWatch is for logging, it monitors the resources and performance of your AWS environment.</li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Test and confirm this. Have a screenshot showing where the Monitoring tab is.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Verify if CloudWatch is global or region-based.
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">Create a GIF showing how to create an alarm.
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+<li id="fn:4">State a specific example of how CloudWatch events works.
+ <a class="footnote-return" href="#fnref:4"><sup>[return]</sup></a></li>
+<li id="fn:5">How to install the agent? More of a Develor Associate and not a Solutions Architect Associate exam question.
+ <a class="footnote-return" href="#fnref:5"><sup>[return]</sup></a></li>
+<li id="fn:6">Custom metrics creation?
+ <a class="footnote-return" href="#fnref:6"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+  </div>
+</section>
+
+
+      </div>
+      <div>
+  <div class="social-media-container">
+  </div>
+  <div class="topic-container">
+    <ul class="topics">
+      
+        
+          <li><a href="../../categories/aws-training/">aws-training</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>
