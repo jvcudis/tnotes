@@ -56,7 +56,7 @@
 
 <p>The Classic Load Balancer (ELB) has an internal IP address which is used by the EC2 instances that are associated to it. This internal IP address is the only address the EC2 instance can capture and use. Sometimes, we want to know where the request originates from and thus we want to know the user IP address, this information is saved on the X-Forwarded-For header.</p>
 
-<pre><code>       :smiley_cat:                                     :cop:                                     :computer:
+<pre><code>       😺                                     👮                                     💻
       USER       ------------------&gt;    LOAD BALANCER    ------------------&gt;    EC2 INSTANCE
    145.67.8.1                             10.0.0.3                               10.0.0.3
                                                                         X-Forwarded-For: 145.67.8.1
