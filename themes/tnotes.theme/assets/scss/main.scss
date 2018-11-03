@@ -93,6 +93,27 @@ hr {
   background: transparent;
 }
 
+code {
+  font-family: letter gothic std,sans-serif;
+  font-size: small;
+  font-weight: bold;
+  color: $pretty-blue;
+}
+
+blockquote {
+  margin: 0px;
+  padding: 5px 20px;
+  border-left: 3px solid $burnt-orange;
+  background: rgba(255, 255, 255, 0.2);
+  color: $the-blue;
+}
+
+sup.footnote-ref {
+  > a {
+    color: $snow-white;
+  }
+}
+
 .content {
   flex-direction: row;
   flex-grow: 1;
