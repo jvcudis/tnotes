@@ -17,9 +17,8 @@
       <pubDate>Fri, 02 Nov 2018 11:30:00 +1300</pubDate>
       
       <guid>/aws-training/using-cloudwatch-for-ec2-monitoring/</guid>
-      <description>LESSON 24 EC2 has basic monitoring enabled by default which monitors the instances every 5 minutes. You can find this by selecting the instances, selecting a specific instance and then there would be a Monitoring tab showing the basic instance metrics.1 To have a detailed monitoring for your instances, you have to do it on CloudWatch2.
-CloudWatch allows you to create the following:
-Dashboard. Create dashboards that shows what is happening to your AWS resources.</description>
+      <description>&lt;p&gt;This section talks about EC2 Monitoring &amp;ndash; the default monitoring and monitoring thru CloudWatch. This also talks about CloudWatch offerings and what each CloudWatch feature is can do.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -28,9 +27,8 @@ Dashboard. Create dashboards that shows what is happening to your AWS resources.
       <pubDate>Fri, 02 Nov 2018 10:41:49 +1300</pubDate>
       
       <guid>/aws-training/aws-load-balancers/</guid>
-      <description>LESSON 23 What is a load balancer? A VM that balances the load across your web servers. Duh!
-There are 3 types of AWS load balancers:
-Application Load Balancer. Best suited for load balancing HTTP/HTTPS traffic and operates at OSI Layer 7. This type of load balancer is application-aware1 which means that they are intelligent and can create advanced request routing where you can send specified request to specific web servers.</description>
+      <description>&lt;p&gt;This section will talk about the basics of load balancers, the different types of load balancers AWS currently is offering, how to create them and associate them to an instance and some important points that is commonly asked in the AWS Solutions Architect Assosiate Certification Exam.
+&lt;/p&gt;</description>
     </item>
     
   </channel>
