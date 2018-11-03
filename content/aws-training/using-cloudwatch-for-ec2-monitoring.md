@@ -26,7 +26,7 @@ CloudWatch allows you to create the following:
 
 ---
 
-##### IMPORTANT POINTS
+##### IMPORTANT EXAM POINTS
 
 * Standard monitoring is **5 mins** while detailed monitoring is **1 min**
 * Dashboards allows you to see your AWS environment as a whole
