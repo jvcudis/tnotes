@@ -1,7 +1,7 @@
 <section class="content__post">
   <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
   <span>
-    {{ dateFormat "January 2, 2006" .Date }} ON
+    {{ dateFormat "January 2, 2006" .Date }} FILED UNDER
     {{ range .Params.categories }}{{ . }}{{ end }}
   </span>
   <div class="wurds">

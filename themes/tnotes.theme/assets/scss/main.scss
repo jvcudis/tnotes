@@ -1,6 +1,7 @@
 $burnt-orange: #EF5E00;
 $snow-white: #FFFFFF;
 $gray-world: #C4C4C4;
+$ultimate-gray: #545454;
 $black-soul: #000000;
 $the-blue: #122B53;
 $pretty-blue: rgba(7,115,209,1);
@@ -62,13 +63,13 @@ body {
       padding: 0;
       margin: 0;
       font-size: 10px;
-      color: $snow-white;
+      color: $ultimate-gray;
     }
   }
 }
 
 a {
-  color: $snow-white;
+  color: $ultimate-gray;
   text-decoration: none;
 }
 
@@ -154,7 +155,7 @@ sup.footnote-ref {
       text-transform: uppercase;
       font-family: 'Letter Gothic Std', sans-serif;
       letter-spacing: 2px;
-      color: $snow-white;
+      color: $ultimate-gray;
     }
 
     > .wurds {
@@ -169,7 +170,7 @@ sup.footnote-ref {
         font-family: letter gothic std,sans-serif;
         font-weight: bold;
         text-transform: uppercase;
-        color: $snow-white;
+        color: $burnt-orange;
       }
     }
   }
