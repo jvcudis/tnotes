@@ -159,6 +159,18 @@ sup.footnote-ref {
 
     > .wurds {
       padding: 15px 0;
+
+      > p {
+        margin-bottom: 0;
+      }
+
+      > a.more-link {
+        font-size: 11px;
+        font-family: letter gothic std,sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $snow-white;
+      }
     }
   }
 }
