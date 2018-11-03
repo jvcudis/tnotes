@@ -22,5 +22,16 @@ CloudWatch allows you to create the following:
 Dashboard. Create dashboards that shows what is happening to your AWS resources.</description>
     </item>
     
+    <item>
+      <title>AWS Load Balancers</title>
+      <link>/aws-training/aws-load-balancers/</link>
+      <pubDate>Fri, 02 Nov 2018 10:41:49 +1300</pubDate>
+      
+      <guid>/aws-training/aws-load-balancers/</guid>
+      <description>LESSON 23 What is a load balancer? A VM that balances the load across your web servers. Duh!
+There are 3 types of AWS load balancers:
+Application Load Balancer. Best suited for load balancing HTTP/HTTPS traffic and operates at OSI Layer 7. This type of load balancer is application-aware1 which means that they are intelligent and can create advanced request routing where you can send specified request to specific web servers.</description>
+    </item>
+    
   </channel>
 </rss>
