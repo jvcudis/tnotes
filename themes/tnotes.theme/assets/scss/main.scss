@@ -92,6 +92,7 @@ hr {
   border: 0;
   border-bottom: 1px dotted $burnt-orange;
   background: transparent;
+  padding: 15px 0;
 }
 
 code {
@@ -159,9 +160,9 @@ sup.footnote-ref {
     }
 
     > .wurds {
-      padding: 15px 0;
+      padding: 0 0 15px;
 
-      > p {
+      > p:first-child {
         margin-bottom: 0;
       }
 
@@ -201,6 +202,7 @@ ul.topics {
       font-family: 'Letter Gothic Std', sans-serif;
       letter-spacing: 2px;
       text-decoration: underline;
+      color: $ultimate-gray;
     }
   }
 }
