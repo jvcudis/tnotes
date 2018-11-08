@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Technical Notes</title>
+  
+  
+  <link rel="stylesheet" href="../../scss/fonts.min.4d39d19ae6c86f3dd507ff048c753b96abc2f7f680e4939db19e5e6f248a2414.css" integrity="sha256-TTnRmubIbz3VB/8EjHU7lqvC9/aA5JOdsZ5ebySKJBQ=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.eba3c1ed512281f3b0871a5b91675a8231a67108669d8766733bb634bed13165.css" integrity="sha256-66PB7VEigfOwhxpbkWdagjGmcQhmnYdmczu2NL7RMWU=" media="screen">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+  <body>
+    <div class="sidebar container">
+  <div class="sidebar__title">
+    <h1><a href="../../">t.notes</a></h1>
+    <br />
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
+  </div>
+  <div class="sidebar__topics">
+    <h4>Built with Hugo</h4>
+    <h4>Powered by Github</h4>
+  </div>
+</div>
+
+    <div class="content container">
+      <div>
+        <div class="content__header"></div>
+        
+  <section class="content__post">
+  <h1><a href="../../aws-training/ami-types-root-devices/">AMI Types Root Devices</a></h1>
+  <span>
+    Nov 2, 2018 FILED UNDER
+    aws-training
+  </span>
+  <div class="wurds">
+    <p>This section mainly talks about EC2 AMI types and the root device volumes provided by AWS. This also contains information on what is the difference between the available root device volumes &ndash; EBS and Instance Store.
+</p>
+
+<h3 id="lesson-22">LESSON 22</h3>
+
+<p>AMIs (Amazon Machine Image) for your EC2 instances can be selected based on the following:</p>
+
+<ul>
+<li>the region and availability zone</li>
+<li>operating system (OS) and architecture</li>
+<li>launch permissions</li>
+<li>root device volumes</li>
+</ul>
+
+<blockquote>
+<p>NOTE: Root Device Volumes are volumes or disks where your operating system is running.</p>
+</blockquote>
+
+<p>AWS offers its users two options to choose from for creating a root device volume for an AMI:</p>
+
+<p><strong>EBS Volumes.</strong> This volume is created from an <strong>EBS (Elastic Block Storage)</strong><sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup>. By default, AWS uses EBS volumes for root devices. Once an EC2 instance using by an AMI backed by an EBS root device volume is launched, then you cannot attach another type of root device volume to the EC2 instance<sup class="footnote-ref" id="fnref:2"><a href="#fn:2">2</a></sup>, in this case the Instance Store Volumes, you can attach other EBS-backed device volumes. The instance can be stopped and rebooted and not lose data</p>
+
+<p><strong>Instance Store Volumes.</strong> This volume is created from a template stored in S3 and used as a AMI root device for an EC2 instance. This is also known as <strong>ephemeral storage</strong> and takes more time to be provisioned compared to an EBS-backed AMI. AMIs using this root device volume type are <strong>cannot be stopped</strong> and if the underlying host fails then your data will be lost forever. EC2 instances created using this root device volume can only be rebooted and terminated. Once rebooted, you will not lose the data<sup class="footnote-ref" id="fnref:3"><a href="#fn:3">3</a></sup>. They cannot be stopped and paused.</p>
+
+<blockquote>
+<p>NOTE: By default, both ROOT volumes will be deleted on termination, however with EBS device volumes, you can tell AWS to keep the root device volume.</p>
+</blockquote>
+
+<hr />
+
+<h5 id="important-exam-points">IMPORTANT EXAM POINTS</h5>
+
+<ul>
+<li>AWS uses the EBS as a default root device volume</li>
+</ul>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">Review on EBS topic
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+<li id="fn:2">Need to verify if you cannot really attach an Instance Store Volume
+ <a class="footnote-return" href="#fnref:2"><sup>[return]</sup></a></li>
+<li id="fn:3">Quiet unclear, must review and see if it really will not lose data during reboot
+ <a class="footnote-return" href="#fnref:3"><sup>[return]</sup></a></li>
+</ol>
+</div>
+  </div>
+</section>
+
+
+      </div>
+      <div>
+  <div class="social-media-container">
+  </div>
+  <div class="topic-container">
+    <ul class="topics">
+      
+        
+          <li><a href="../../categories/aws-training/">aws-training</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>

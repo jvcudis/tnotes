@@ -13,6 +13,11 @@
   </url>
   
   <url>
+    <loc>/aws-training/ami-types-root-devices/</loc>
+    <lastmod>2018-11-02T09:16:37+13:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/categories/aws-training/</loc>
     <lastmod>2018-11-02T11:30:00+13:00</lastmod>
     <priority>0</priority>
