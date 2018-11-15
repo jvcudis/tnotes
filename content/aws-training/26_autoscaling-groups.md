@@ -31,3 +31,5 @@ LABORATORY
 TODO
 More info about autoscaling groups
 Do the laboratory exercise.
+read about ecs agent.
+read about what hypervisor are being used for ec2 instances
