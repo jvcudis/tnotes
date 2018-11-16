@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/aws-training/32_dns-101/</loc>
-    <lastmod>2018-11-16T12:02:29+13:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/aws-training/24_using-cloudwatch-for-ec2-monitoring/</loc>
     <lastmod>2018-11-02T11:30:00+13:00</lastmod>
   </url>
@@ -24,19 +19,19 @@
   
   <url>
     <loc>/categories/aws-training/</loc>
-    <lastmod>2018-11-16T12:02:29+13:00</lastmod>
+    <lastmod>2018-11-02T11:30:00+13:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/aws-training/</loc>
-    <lastmod>2018-11-16T12:02:29+13:00</lastmod>
+    <lastmod>2018-11-02T11:30:00+13:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2018-11-16T12:02:29+13:00</lastmod>
+    <lastmod>2018-11-02T11:30:00+13:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,7 +42,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-11-16T12:02:29+13:00</lastmod>
+    <lastmod>2018-11-02T11:30:00+13:00</lastmod>
     <priority>0</priority>
   </url>
   

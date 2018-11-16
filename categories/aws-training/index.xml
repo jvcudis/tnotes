@@ -6,20 +6,10 @@
     <description>Recent content in Aws Training on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 16 Nov 2018 12:02:29 +1300</lastBuildDate>
+    <lastBuildDate>Fri, 02 Nov 2018 11:30:00 +1300</lastBuildDate>
     
 	<atom:link href="/categories/aws-training/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>DNS 101</title>
-      <link>/aws-training/32_dns-101/</link>
-      <pubDate>Fri, 16 Nov 2018 12:02:29 +1300</pubDate>
-      
-      <guid>/aws-training/32_dns-101/</guid>
-      <description>&lt;p&gt;DNS 101 generic topics. Introductory topic.
-&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>Using CloudWatch for EC2 Monitoring</title>
