@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Technical Notes</title>
+  
+  
+  <link rel="stylesheet" href="../../scss/fonts.min.4d39d19ae6c86f3dd507ff048c753b96abc2f7f680e4939db19e5e6f248a2414.css" integrity="sha256-TTnRmubIbz3VB/8EjHU7lqvC9/aA5JOdsZ5ebySKJBQ=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.eba3c1ed512281f3b0871a5b91675a8231a67108669d8766733bb634bed13165.css" integrity="sha256-66PB7VEigfOwhxpbkWdagjGmcQhmnYdmczu2NL7RMWU=" media="screen">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+  <body>
+    <div class="sidebar container">
+  <div class="sidebar__title">
+    <h1><a href="../../">t.notes</a></h1>
+    <br />
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
+  </div>
+  <div class="sidebar__topics">
+    <h4>Built with Hugo</h4>
+    <h4>Powered by Github</h4>
+  </div>
+</div>
+
+    <div class="content container">
+      <div>
+        <div class="content__header"></div>
+        
+  <section class="content__post">
+  <h1><a href="../../new-relic/sanitizing-json-deployment-payload/">Sanitizing JSON Deployment Payload</a></h1>
+  <span>
+    Nov 21, 2018 FILED UNDER
+    new-relic
+  </span>
+  <div class="wurds">
+    <p>A few weeks ago, I was tasked to create New Relic deployment markers for our applications that have APM enabled. Just to give a background, I am pretty much new to New Relic and found the deployment markers pretty helpful when you want to know (and bl@me!) if someone has added a change that has compromised the performance of your application, &lsquo;coz it&rsquo;s all about traceability these days! Hurrah!
+</p>
+
+<p>There is already an exisiting solution that I can copy-paste which comes from one of the developers.</p>
+
+<script type="application/javascript" src="//gist.github.com/jvcudis/085de902a13714efcd167e71f18ed93d.js"></script>
+
+<p>But being a &lsquo;DevOps&rsquo; person in the team, I have to ask if the deployment markers are giving them (devs! in this case) the necessary information they want. A short background, I&rsquo;ve been doing the devops gig for approximately 4 months now and sort of learning by doing a lot of &lsquo;Google search&rsquo; and seriously reading the &lsquo;Accelerate&rsquo; book. I did a survey of what the developers think as the most (or more) helpful data they want to see for the deployment marker. The devs chose to see the information on the latest commit from their repository. In theory, it would have helped if the releases are tagged so in that way, we can use the tag as basis for revision. But that&rsquo;s another discussion with the team.</p>
+
+<p>I thought it would be easy updating the code to something like:</p>
+
+<script type="application/javascript" src="//gist.github.com/jvcudis/6960f1ecb76e4219d2d965a5b0710056.js"></script>
+
+<p>Here&rsquo;s the thing, JSON payload string interpolation is confusing. For example, we have something like <code>This is a small change yo</code> as the value of the <code>$GIT_COMMIT_MSG</code>. Apparently, the interpolation we are using which is <code>&quot;'$VAR_HERE'&quot;</code> only supports a single string, if it&rsquo;s a collection of strings (a sentence in layman&rsquo;s term) then it would just throw an error. So in comes JSON sanitization by using <code>jq</code>.</p>
+
+<p>So below is the updated code:</p>
+
+<script type="application/javascript" src="//gist.github.com/jvcudis/f1cc85fe5198334e0b8574daca580752.js"></script>
+
+<p>This piece of code will run after a successful deployment. And we are using TeamCity as our tool for that.</p>
+  </div>
+</section>
+
+
+      </div>
+      <div>
+  <div class="social-media-container">
+  </div>
+  <div class="topic-container">
+    <ul class="topics">
+      
+        
+          <li><a href="../../categories/aws-training/">aws-training</a></li>
+        
+      
+        
+          <li><a href="../../categories/new-relic/">new-relic</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>
