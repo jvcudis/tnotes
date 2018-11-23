@@ -45,6 +45,7 @@ NOTES:
 - read faqs for each routing policy
 - can i used the different routing policies for an S3 static website resource?
 - when an instance is restarted, it would have a new set of IP addresses.
-
-TIPS TO REMEMBER
--
+- Geolocation is based on national boundaries and Geoproximity is based on Latitude & Longitude
+- Alias Records provide a Route 53–specific extension to DNS functionality
+- CNAME records can point at any resource with an routable IP address on the network.
+- Only allowed 50 domain names to registered on route53.
