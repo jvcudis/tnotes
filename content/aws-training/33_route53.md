@@ -17,7 +17,7 @@ A laboratory.
 
 Routing Policies that AWS Offers when you create a record set
 - simple routing
-  - default policy when creating a new record set. used commonly when you have a single resource. one web server. see notebook for diagram.
+  - default policy when creating a new record set. used commonly when you have a single resource. one web server. can setup multiple IP addresses. no healthchecks. see notebook for diagram.
   - laboratory. open route53 and go to the DNS record. create a new record set. created a naked domain name which is an alias record. there's nothing in front of your domain name. choose Yes for Alias. For alias target, select a load balancer or any resource. How it works? Whenever you go to the domain name, example.com then it would redirect to the DNS name of the load balancer. load balancers are not given ip addressses, only DNS names
 
 - weighted routing
@@ -33,9 +33,18 @@ Routing Policies that AWS Offers when you create a record set
   - laboratory. go to route53 DNS records and delete the existing A records. Create a healthcheck under health checks and choose endpoint and choose IP address and input the ip address, hostname, port and index.html file. wait for healthcheck to be online. go back to domain name list and create a new record set using failover policy and setup by inputting the ip address and selecting primary and the created healthcheck. create another record set using failover policy using an ip address from another instance in diff region and use failover with secondary with no healthcheck. change ttl to 60 for faster failover. how it works? stop the instances pointed by the primary and see the healthchecks are unhealthy and you can't access the site. when you refresh again, it would point to the secondary server.
 
 - geolocation
-  -
+  - allows you to choose where traffic is sent based on geographic location of users. sends traffic to the location from which the DNS query originated. helpful for localization since you can send traffic to users using settings specific to the country. see notebook again for diagram.
+  - laboratory. go to route53 and delete the existing A records. Create a new record set and add the IP of the instance running on the US region. Select North America as Location. Grab the IP address of the instance running in sydney and use this to create a new record set and set the location to Oceania.
+
+  - multivalue answer
+    - allows to route traffic randomly to multiple resources (web servers). one multivalue is mapped to one resource and you can set a healthcheck for each resource. allowed to have 12 multivalue record sets and 8 healthchecks in response to each DNS query. R53 gives different answers to different DNS resolvers.
+    - laboratory. go to route53 and delete all existing A records. create a record set and grab the IP address of 1 instance and use it as value and set routing policy to multianswer value. You can also associate a healthcheck. Do the same thing for another instance server.
 
 NOTES:
 - what is a hosted zone?
 - read faqs for each routing policy
 - can i used the different routing policies for an S3 static website resource?
+- when an instance is restarted, it would have a new set of IP addresses.
+
+TIPS TO REMEMBER
+-
