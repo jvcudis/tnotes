@@ -2,8 +2,8 @@ $burnt-orange: #EF5E00;
 $snow-white: #FFFFFF;
 $gray-world: #C4C4C4;
 $ultimate-gray: #545454;
-$black-soul: #000000;
-$the-blue: #122B53;
+$black-soul: rgba(0,0,0,.84);
+$black-soul: #122B53;
 $pretty-blue: rgba(7,115,209,1);
 $gothic: 'Letter Gothic Std', sans-serif;
 
@@ -14,7 +14,7 @@ html {
 body {
   width: 100wh;
   height: 100%;
-  background-color: $gray-world;
+  background-color: $snow-white;
 	background-size: 400% 400%;
   margin: 0;
   padding: 0;
@@ -36,11 +36,11 @@ body {
   min-width: 200px;
   width: 200px;
   height: 100%;
-  background-image: url('{{ .Site.Params.subdomain }}/images/bg.png');
+  background-image: url('{{ .Site.Params.subdomain }}/images/background.jpg');
   background-size: cover;
   background-position-x: 30%;
   color: #000;
-  border-right: 1px dotted $burnt-orange;
+  // border-right: 1px dotted $burnt-orange;
   display: flex;
   justify-content: space-between;
 
@@ -82,7 +82,7 @@ h1 {
 h4 {
   font-size: 11px;
   text-transform: uppercase;
-  color: $the-blue;
+  color: $black-soul;
   font-family: 'Letter Gothic Std', sans-serif;
   letter-spacing: 2px;
   line-height: 18px;
@@ -107,7 +107,7 @@ blockquote {
   padding: 5px 20px;
   border-left: 3px solid $burnt-orange;
   background: rgba(255, 255, 255, 0.2);
-  color: $the-blue;
+  color: $black-soul;
 }
 
 sup.footnote-ref {
@@ -148,7 +148,7 @@ sup.footnote-ref {
     }
 
     > h1, a {
-      color: $the-blue;
+      color: $black-soul;
     }
 
     > span {
