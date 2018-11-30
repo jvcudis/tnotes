@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Technical Notes</title>
+  
+  
+  <link rel="stylesheet" href="../../scss/fonts.min.08f160cae4ae6de7ef8f9646ba5b6467c5206304e51660174b0ad8cf6af70bd8.css" integrity="sha256-CPFgyuSubefvj5ZGultkZ8UgYwTlFmAXSwrYz2r3C9g=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.32357e315be128a208fbbfbfb99e2b28a79123805d0fc60f1d449762706d69d4.css" integrity="sha256-MjV&#43;MVvhKKII&#43;7&#43;/uZ4rKKeRI4BdD8YPHUSXYnBtadQ=" media="screen">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+  <body>
+    <div class="sidebar container">
+  <div class="sidebar__title">
+    <h1><a href="../../">t.notes</a></h1>
+    <br />
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
+  </div>
+  <div class="sidebar__meta">
+    <span>Built with Hugo.</span>
+    <span>Powered by Github.</span>
+  </div>
+</div>
+
+    <div class="content container">
+      <div>
+        <div class="content__header"></div>
+        
+  <section class="content__post">
+  <h1><a href="../../aws-training/34-databases_in_the_aws_world/">Databases in the AWS World</a></h1>
+  <span>
+    Nov 23, 2018 FILED UNDER
+    aws-training
+  </span>
+  <div class="wurds">
+    <p>This talks about the basic database concepts, like what a relational database is. If you are a database admin and have a clear grasp about database management then this section could be skipped. This also tackles the different database solution offerings from AWS aside from the <strong>Relational Database Service (RDS)</strong>, which are DynamoDB, RedShift, Elasticache, and Aurora.
+</p>
+
+<hr>
+
+<h3 id="lesson-34">LESSON 34</h3>
+
+<h3 id="aws-database-types">AWS Database Types</h3>
+
+<ul>
+<li>RDS - OLTP or Relational Database</li>
+<li>DynamoDB - NoSQL</li>
+<li>RedShift - OLAP or Data Warehousing</li>
+<li>Elasticache - In Memory Caching</li>
+</ul>
+
+<h3 id="relational-database-concept">Relational Database Concept</h3>
+
+<p>Please read AWS&rsquo;s post on Relational Database: <a href="https://aws.amazon.com/relational-database/">https://aws.amazon.com/relational-database/</a>. Below are different relational database types available:</p>
+
+<ul>
+<li>SQL Server - Microsoft product, paid</li>
+<li>Oracle - mostly used for big enterprises</li>
+<li>MySQL Server - opensource offering, free</li>
+<li>PostgreSQL - opensource</li>
+<li>Aurora - AWS&rsquo;s offering, comes in 2 flavors which is MySQL and PostgreSQL. AWS offers migration from PostgreSQL/MySQL to Aurora</li>
+<li>MariaDB - also one of the popular options</li>
+</ul>
+
+<h3 id="non-relational-databases-nosql">Non Relational Databases (NoSQL)</h3>
+
+<p>JSON format is used by NoSQL. It allows for nested values. <strong>DynamoDB</strong> is the AWS offering.</p>
+
+<h3 id="oltp-vs-olap">OLTP vs OLAP</h3>
+
+<p>The difference would be the types of queries to run.</p>
+
+<h4 id="oltp-online-transaction-processing">OLTP (Online Transaction Processing)</h4>
+
+<p>Example, you got an order number 2120121 and OLTP pulls up a row of data that contains data such as name, address, etc.</p>
+
+<h4 id="olap-online-analytics-processing">OLAP (Online Analytics Processing)</h4>
+
+<p>Used for data warehousing. Example would be running a query to get the number of products sold in a certain region or continent or get the net profit of a product. The query would pull in large number of records and do calculations to process the request.</p>
+
+<h3 id="data-warehousing">Data Warehousing</h3>
+
+<ul>
+<li>Used for BI (Business Intelligence) and some of the BI tools are Cognos, Jaspersoft, SQL Server Reporting Services, Oracle Hyperion, SAP NetWeaver</li>
+<li>Used to pull in very large  and complex data sets</li>
+<li>Used usually by management to do queries on data (such as current perf vs targets)</li>
+<li>Database warehouse databases use different type of architecture both from a database perspective and infrastructure layer</li>
+</ul>
+
+<h3 id="what-is-elasticache">What is Elasticache</h3>
+
+<p>It is a web service that makes it easy to deploy, operate and scale an in-memory cache in the cloud. It improves the performance of the web applications by allowing you to retrieve information from fast, managed, in-memory caches instead of relying on a slower dis-based databases. It supports both <strong>Memcached</strong> and <strong>Redis</strong>. For example, you display the top products in your page. What mostly happens is that when someone accesses the page, the app would query the data from the database. This kind of data might not be changed or updated often, so to have a more optimized service, this query or data can me cached for a certain amount of time. Having that data cached could free up the database to doing more valuable processes.</p>
+
+<hr>
+
+<h3 id="rds-laboratory">RDS Laboratory</h3>
+
+<h4 id="create-and-connect-to-aws-rds-service">Create and connect to AWS RDS Service</h4>
+
+<ol>
+<li>Go to RDS page, and <strong>Launch a DB instance</strong> and select MySQL. NOTE: Can&rsquo;t use Aurora on free-tier. Go to <strong>Next</strong> and leave everything as default.</li>
+<li>Setup the <em>DB instance identifier</em>, the <em>Master username</em> and <em>Master password</em>. The instance identifier is unique for all DB instances in you AWS account in the current region so this is your DB instance name.</li>
+<li>Next would be to configure the advanced settings. Use the default VPC and subnet group. Make sure that your RDS instance it is not publicly accessible. Make sure that you <em>Create a new VPC security group</em> for your RDS. Setup the <em>Database name</em> and leave everything by default.</li>
+<li>Launch the DB instance. It could take a few minutes to provision the instance.</li>
+<li>Go to the EC2 page and create an instance. Use the Amazon AMI t2.micro and leave everything as default except for the bootstrap script which is under <em>Advanced Details</em>.</li>
+<li>Use the below bootstrap script. This script would setup an Apache server, install php and php-mysql to your instance. It will also create an index page containing the php info and download a script from S3. Make sure you have the <strong>connect.php</strong> script on your own S3 bucket.
+<script type="application/javascript" src="//gist.github.com/jvcudis/d34b7d6c7ff909dbe94ca979329a4eef.js"></script></li>
+<li>To be continued&hellip;</li>
+</ol>
+  </div>
+</section>
+
+
+      </div>
+      <div>
+  <div class="social-media-container">
+  </div>
+  <div class="topic-container">
+    <ul class="topics">
+      
+        
+          <li><a href="../../categories/aws-training/">aws-training</a></li>
+        
+      
+        
+          <li><a href="../../categories/geffen-library-project/">geffen-library-project</a></li>
+        
+      
+        
+          <li><a href="../../categories/new-relic/">new-relic</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>

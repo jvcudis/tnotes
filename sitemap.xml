@@ -3,8 +3,18 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/aws-training/34-databases_in_the_aws_world/</loc>
+    <lastmod>2018-11-23T15:12:55+13:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/new-relic/sanitizing-json-deployment-payload/</loc>
     <lastmod>2018-11-21T16:55:11+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/geffen-library-project/about/</loc>
+    <lastmod>2018-11-15T09:57:24+13:00</lastmod>
   </url>
   
   <url>
@@ -24,19 +34,31 @@
   
   <url>
     <loc>/categories/aws-training/</loc>
-    <lastmod>2018-11-02T11:30:00+13:00</lastmod>
+    <lastmod>2018-11-23T15:12:55+13:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/aws-training/</loc>
-    <lastmod>2018-11-02T11:30:00+13:00</lastmod>
+    <lastmod>2018-11-23T15:12:55+13:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2018-11-02T11:30:00+13:00</lastmod>
+    <lastmod>2018-11-23T15:12:55+13:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/geffen-library-project/</loc>
+    <lastmod>2018-11-15T09:57:24+13:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/geffen-library-project/</loc>
+    <lastmod>2018-11-15T09:57:24+13:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -59,7 +81,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-11-21T16:55:11+13:00</lastmod>
+    <lastmod>2018-11-23T15:12:55+13:00</lastmod>
     <priority>0</priority>
   </url>
   

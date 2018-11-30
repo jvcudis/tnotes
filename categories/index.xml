@@ -6,7 +6,7 @@
     <description>Recent content in Categories on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Nov 2018 11:30:00 +1300</lastBuildDate>
+    <lastBuildDate>Fri, 23 Nov 2018 15:12:55 +1300</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,18 @@
     <item>
       <title>Aws Training</title>
       <link>/categories/aws-training/</link>
-      <pubDate>Fri, 02 Nov 2018 11:30:00 +1300</pubDate>
+      <pubDate>Fri, 23 Nov 2018 15:12:55 +1300</pubDate>
       
       <guid>/categories/aws-training/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Geffen Library Project</title>
+      <link>/categories/geffen-library-project/</link>
+      <pubDate>Thu, 15 Nov 2018 09:57:24 +1300</pubDate>
+      
+      <guid>/categories/geffen-library-project/</guid>
       <description></description>
     </item>
     

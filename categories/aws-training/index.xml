@@ -6,10 +6,20 @@
     <description>Recent content in Aws Training on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 02 Nov 2018 11:30:00 +1300</lastBuildDate>
+    <lastBuildDate>Fri, 23 Nov 2018 15:12:55 +1300</lastBuildDate>
     
 	<atom:link href="/categories/aws-training/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Databases in the AWS World</title>
+      <link>/aws-training/34-databases_in_the_aws_world/</link>
+      <pubDate>Fri, 23 Nov 2018 15:12:55 +1300</pubDate>
+      
+      <guid>/aws-training/34-databases_in_the_aws_world/</guid>
+      <description>&lt;p&gt;This talks about the basic database concepts, like what a relational database is. If you are a database admin and have a clear grasp about database management then this section could be skipped. This also tackles the different database solution offerings from AWS aside from the &lt;strong&gt;Relational Database Service (RDS)&lt;/strong&gt;, which are DynamoDB, RedShift, Elasticache, and Aurora.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Using CloudWatch for EC2 Monitoring</title>

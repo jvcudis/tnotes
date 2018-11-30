@@ -6,10 +6,20 @@
     <description>Recent content on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Nov 2018 16:55:11 +1300</lastBuildDate>
+    <lastBuildDate>Fri, 23 Nov 2018 15:12:55 +1300</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Databases in the AWS World</title>
+      <link>/aws-training/34-databases_in_the_aws_world/</link>
+      <pubDate>Fri, 23 Nov 2018 15:12:55 +1300</pubDate>
+      
+      <guid>/aws-training/34-databases_in_the_aws_world/</guid>
+      <description>&lt;p&gt;This talks about the basic database concepts, like what a relational database is. If you are a database admin and have a clear grasp about database management then this section could be skipped. This also tackles the different database solution offerings from AWS aside from the &lt;strong&gt;Relational Database Service (RDS)&lt;/strong&gt;, which are DynamoDB, RedShift, Elasticache, and Aurora.
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Sanitizing JSON Deployment Payload</title>
@@ -18,6 +28,16 @@
       
       <guid>/new-relic/sanitizing-json-deployment-payload/</guid>
       <description>&lt;p&gt;A few weeks ago, I was tasked to create New Relic deployment markers for our applications that have APM enabled. Just to give a background, I am pretty much new to New Relic and found the deployment markers pretty helpful when you want to know (and bl@me!) if someone has added a change that has compromised the performance of your application, &amp;lsquo;coz it&amp;rsquo;s all about traceability these days! Hurrah!
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Geffen Library Project</title>
+      <link>/geffen-library-project/about/</link>
+      <pubDate>Thu, 15 Nov 2018 09:57:24 +1300</pubDate>
+      
+      <guid>/geffen-library-project/about/</guid>
+      <description>&lt;p&gt;The Geffen Archives Project is a plan
 &lt;/p&gt;</description>
     </item>
     
