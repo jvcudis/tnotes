@@ -1,10 +1,11 @@
-$burnt-orange: #EF5E00;
 $snow-white: #FFFFFF;
 $gray-world: #C4C4C4;
 $ultimate-gray: #545454;
 $black-soul: rgba(0,0,0,.84);
 $black-soul: #122B53;
-$pretty-blue: rgba(7,115,209,1);
+$all-hail: #A41938;
+$greenies: #91AA2E;
+
 $gothic: 'Letter Gothic Std', sans-serif;
 $sub-text: 'TextMeOne', sans-serif;
 $code-text: 'AnonymousPro', monospace;
@@ -84,7 +85,7 @@ a {
 h1 {
   font-family: 'PT Serif', serif;
   font-weight: 100;
-  font-size: 24px;
+  font-size: 2.5rem;
 }
 
 h4 {
@@ -98,7 +99,7 @@ h4 {
 
 hr {
   border: 0;
-  border-bottom: 1px dotted $burnt-orange;
+  border-bottom: 1px dotted $greenies;
   background: transparent;
   padding: 15px 0;
 }
@@ -106,13 +107,13 @@ hr {
 code {
   font-family: $code-text;
   font-size: 14px;
-  color: $pretty-blue;
+  color: $greenies;
 }
 
 blockquote {
   margin: 0px;
   padding: 5px 20px;
-  border-left: 3px solid $burnt-orange;
+  border-left: 3px solid $greenies;
   background: rgba(255, 255, 255, 0.2);
   color: $black-soul;
 }
@@ -175,11 +176,11 @@ sup.footnote-ref {
       }
 
       > a.more-link {
-        font-size: 11px;
         font-family: $sub-text;
-        font-weight: bold;
+        font-size: 11px;
         text-transform: uppercase;
-        color: $burnt-orange;
+        letter-spacing: 1px;
+        color: $greenies;
       }
     }
   }
@@ -205,11 +206,11 @@ ul.topics {
 
     > a {
       display: block;
-      font-size: 11px;
+      font-size: 13px;
       text-transform: uppercase;
       font-family: $sub-text;
       letter-spacing: 2px;
-      color: $ultimate-gray;
+      color: $all-hail;
     }
   }
 }
