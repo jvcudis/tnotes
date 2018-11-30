@@ -6,6 +6,8 @@ $black-soul: rgba(0,0,0,.84);
 $black-soul: #122B53;
 $pretty-blue: rgba(7,115,209,1);
 $gothic: 'Letter Gothic Std', sans-serif;
+$sub-text: 'TextMeOne', sans-serif;
+$code-text: 'AnonymousPro', monospace;
 
 html {
   height: 100%;
@@ -24,6 +26,8 @@ body {
   line-height: 1;
   font-family: $gothic;
   color: $black-soul;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .container {
@@ -40,7 +44,6 @@ body {
   background-size: cover;
   background-position-x: 30%;
   color: #000;
-  // border-right: 1px dotted $burnt-orange;
   display: flex;
   justify-content: space-between;
 
@@ -58,12 +61,17 @@ body {
     }
   }
 
-  &__topics {
-    > h4 {
+  &__meta {
+    padding: 20px;
+
+    > span {
+      font-family: $sub-text;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $snow-white;
       padding: 0;
       margin: 0;
-      font-size: 10px;
-      color: $snow-white;
     }
   }
 }
@@ -83,7 +91,7 @@ h4 {
   font-size: 11px;
   text-transform: uppercase;
   color: $black-soul;
-  font-family: 'Letter Gothic Std', sans-serif;
+  font-family: $sub-text;
   letter-spacing: 2px;
   line-height: 18px;
 }
@@ -96,9 +104,8 @@ hr {
 }
 
 code {
-  font-family: letter gothic std,sans-serif;
-  font-size: small;
-  font-weight: bold;
+  font-family: $code-text;
+  font-size: 14px;
   color: $pretty-blue;
 }
 
@@ -135,7 +142,8 @@ sup.footnote-ref {
     font-family: 'PT Sans', sans-serif;
     font-weight: normal;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.58;
+    letter-spacing: -.003em;
     color: $black-soul;
 
     > p {
@@ -154,7 +162,7 @@ sup.footnote-ref {
     > span {
       font-size: 11px;
       text-transform: uppercase;
-      font-family: 'Letter Gothic Std', sans-serif;
+      font-family: $gothic;
       letter-spacing: 2px;
       color: $ultimate-gray;
     }
@@ -168,7 +176,7 @@ sup.footnote-ref {
 
       > a.more-link {
         font-size: 11px;
-        font-family: letter gothic std,sans-serif;
+        font-family: $sub-text;
         font-weight: bold;
         text-transform: uppercase;
         color: $burnt-orange;
@@ -199,9 +207,8 @@ ul.topics {
       display: block;
       font-size: 11px;
       text-transform: uppercase;
-      font-family: 'Letter Gothic Std', sans-serif;
+      font-family: $sub-text;
       letter-spacing: 2px;
-      text-decoration: underline;
       color: $ultimate-gray;
     }
   }
