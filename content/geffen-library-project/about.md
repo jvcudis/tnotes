@@ -1,7 +1,7 @@
 ---
 title: "The Geffen Library Project"
 date: 2018-11-15T09:57:24+13:00
-draft: false
+draft: true
 Categories: ["geffen-library-project"]
 ---
 The Geffen Archives Project is a plan
