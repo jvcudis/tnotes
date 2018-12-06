@@ -32,16 +32,6 @@
     </item>
     
     <item>
-      <title>The Geffen Library Project</title>
-      <link>/geffen-library-project/about/</link>
-      <pubDate>Thu, 15 Nov 2018 09:57:24 +1300</pubDate>
-      
-      <guid>/geffen-library-project/about/</guid>
-      <description>&lt;p&gt;The Geffen Archives Project is a plan
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>Using CloudWatch for EC2 Monitoring</title>
       <link>/aws-training/24_using-cloudwatch-for-ec2-monitoring/</link>
       <pubDate>Fri, 02 Nov 2018 11:30:00 +1300</pubDate>
