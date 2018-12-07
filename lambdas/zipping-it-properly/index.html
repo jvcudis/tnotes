@@ -27,21 +27,57 @@
       <div>
         <div class="content__header"></div>
         
-  
-    <section class="content__post">
-  <h1><a href="../../new-relic/sanitizing-json-deployment-payload/">Sanitizing JSON Deployment Payload</a></h1>
+  <section class="content__post">
+  <h1><a href="../../lambdas/zipping-it-properly/">Zipping It Properly</a></h1>
   <span>
-    November 21, 2018 FILED UNDER
-    new-relic
+    Dec 7, 2018 FILED UNDER
+    lambdasgotchas
   </span>
   <div class="wurds">
-    <p>A few weeks ago, I was tasked to create New Relic deployment markers for our applications that have APM enabled. Just to give a background, I am pretty much new to New Relic and found the deployment markers pretty helpful when you want to know (and bl@me!) if someone has added a change that has compromised the performance of your application, &lsquo;coz it&rsquo;s all about traceability these days! Hurrah!
+    <p>If you have spent at least two hours of figuring out why your NodeJS lambda is throwing an error that says <code>Cannot find module '/var/task/index</code> then this is for you.
 </p>
-    <a class="more-link" href="../../new-relic/sanitizing-json-deployment-payload/"><nobr>Read more</nobr></a>
+
+<p>Given that you hava an npm project with the following <code>package.json</code> file.</p>
+
+<pre><code>{
+  &quot;name&quot;: &quot;Test&quot;,
+  &quot;version&quot;: &quot;1.0.0&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;main&quot;: &quot;main.js&quot;,
+  &quot;author&quot;: &quot;jvcudis@gmail.com&quot;,
+  &quot;license&quot;: &quot;ISC&quot;
+}
+</code></pre>
+
+<p>And you have a <code>main.js</code> file..</p>
+
+<pre><code>exports.handler = async (event) =&gt; {
+  const resp = postToES(JSON.stringify(event))
+
+  let response = {
+      statusCode: 200,
+      resp: resp,
+      body: JSON.stringify('Hello from Lambda!'),
+  };
+
+  return response;
+}
+</code></pre>
+
+<p>Then you try to create a deployment package by&hellip;</p>
+
+<pre><code># Given that you are currently within the project directory
+$ zip -r project.zip *
+</code></pre>
+
+<p>Once you have the zip file, you go to your AWS console and try to upload it.</p>
+
+<p>By default, the lambda handler is set to <code>index.handler</code>. When you have a different filename aside from <code>index.js</code> then you have to change the default handler to that value, in this case it has to be changed to <code>main.handler</code> since our entry file is <code>main.js</code>.</p>
+
+<p>Gotcha!</p>
   </div>
 </section>
 
-  
 
       </div>
       <div>
