@@ -6,7 +6,7 @@
   
   
   <link rel="stylesheet" href="../../scss/fonts.min.5876f9895dfb5169189a2b4f8d9ad12bac1ff3dba16be70a3920be0f7f43b6fa.css" integrity="sha256-WHb5iV37UWkYmitPjZrRK6wf89uha&#43;cKOSC&#43;D39Dtvo=" media="screen">
-  <link rel="stylesheet" href="../../scss/main.min.37b03cd108b0084e4ababe9502c1b15513cd0b02fdc84f10fd3d9045324902df.css" integrity="sha256-N7A80QiwCE5Kur6VAsGxVRPNCwL9yE8Q/T2QRTJJAt8=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.38cac43e3427d7dddb1d74f89fbc0a8901ccce0416f12a18f3b1c2b12e79b4bd.css" integrity="sha256-OMrEPjQn193bHXT4n7wKiQHMzgQW8SoY87HCsS55tL0=" media="screen">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
@@ -39,36 +39,74 @@
 
 <p>Given that you hava an npm project with the following <code>package.json</code> file.</p>
 
-<pre><code>{
-  &quot;name&quot;: &quot;Test&quot;,
-  &quot;version&quot;: &quot;1.0.0&quot;,
-  &quot;description&quot;: &quot;&quot;,
-  &quot;main&quot;: &quot;main.js&quot;,
-  &quot;author&quot;: &quot;jvcudis@gmail.com&quot;,
-  &quot;license&quot;: &quot;ISC&quot;
-}
-</code></pre>
+<div class="highlight"><div style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;Test&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;version&#34;</span>: <span style="color:#c30">&#34;1.0.0&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;main&#34;</span>: <span style="color:#c30">&#34;main.js&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;author&#34;</span>: <span style="color:#c30">&#34;jvcudis@gmail.com&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;license&#34;</span>: <span style="color:#c30">&#34;ISC&#34;</span>
+}</code></pre></td></tr></table>
+</div>
+</div>
 
 <p>And you have a <code>main.js</code> file..</p>
 
-<pre><code>exports.handler = async (event) =&gt; {
-  const resp = postToES(JSON.stringify(event))
+<div class="highlight"><div style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">exports.handler <span style="color:#555">=</span> <span style="color:#069;font-weight:bold">async</span> (event) =&gt; {
+  <span style="color:#069;font-weight:bold">const</span> resp <span style="color:#555">=</span> postToES(JSON.stringify(event))
 
-  let response = {
-      statusCode: 200,
-      resp: resp,
-      body: JSON.stringify('Hello from Lambda!'),
+  <span style="color:#069;font-weight:bold">let</span> response <span style="color:#555">=</span> {
+      statusCode<span style="color:#555">:</span> <span style="color:#f60">200</span>,
+      resp<span style="color:#555">:</span> resp,
+      body<span style="color:#555">:</span> JSON.stringify(<span style="color:#c30">&#39;Hello from Lambda!&#39;</span>),
   };
 
-  return response;
+  <span style="color:#069;font-weight:bold">return</span> response;
 }
-</code></pre>
+</code></pre></td></tr></table>
+</div>
+</div>
 
 <p>Then you try to create a deployment package by&hellip;</p>
 
-<pre><code># Given that you are currently within the project directory
-$ zip -r project.zip *
-</code></pre>
+<div class="highlight"><div style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#09f;font-style:italic"># Given that you are currently within the project directory
+</span><span style="color:#09f;font-style:italic"></span>$ zip -r project.zip *</code></pre></td></tr></table>
+</div>
+</div>
 
 <p>Once you have the zip file, you go to your AWS console and try to upload it.</p>
 
