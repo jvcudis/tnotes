@@ -9,7 +9,7 @@ If you have spent at least two hours of figuring out why your NodeJS lambda is t
 
 Given that you hava an npm project with the following `package.json` file.
 
-```
+{{< highlight json "linenos=table,linenostart=1,style=manni" >}}
 {
   "name": "Test",
   "version": "1.0.0",
@@ -18,11 +18,11 @@ Given that you hava an npm project with the following `package.json` file.
   "author": "jvcudis@gmail.com",
   "license": "ISC"
 }
-```
+{{< / highlight >}}
 
 And you have a `main.js` file..
 
-```
+{{< highlight js "linenos=table,linenostart=1,style=manni" >}}
 exports.handler = async (event) => {
   const resp = postToES(JSON.stringify(event))
 
@@ -34,14 +34,14 @@ exports.handler = async (event) => {
 
   return response;
 }
-```
+{{< / highlight >}}
 
 Then you try to create a deployment package by...
 
-```
+{{< highlight shell "linenos=table,linenostart=1,style=manni" >}}
 # Given that you are currently within the project directory
 $ zip -r project.zip *
-```
+{{< / highlight >}}
 
 Once you have the zip file, you go to your AWS console and try to upload it.
 

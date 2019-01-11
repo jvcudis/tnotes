@@ -108,9 +108,8 @@ hr {
 }
 
 code {
-  font-family: $code-text;
-  font-size: 14px;
-  color: $greenies;
+  font-size: 1rem;
+  font-family: inherit;
 }
 
 blockquote {
@@ -155,6 +154,9 @@ sup.footnote-ref {
     }
 
     > h1 {
+      font-weight: normal;
+      font-size: 2.5rem;
+      line-height: 3rem;
       font-family: $header-font;
       font-weight: 500;
       // margin-bottom: 0;
