@@ -5,8 +5,8 @@
   <title>Technical Notes</title>
   
   
-  <link rel="stylesheet" href="../../scss/fonts.min.08f160cae4ae6de7ef8f9646ba5b6467c5206304e51660174b0ad8cf6af70bd8.css" integrity="sha256-CPFgyuSubefvj5ZGultkZ8UgYwTlFmAXSwrYz2r3C9g=" media="screen">
-  <link rel="stylesheet" href="../../scss/main.min.32357e315be128a208fbbfbfb99e2b28a79123805d0fc60f1d449762706d69d4.css" integrity="sha256-MjV&#43;MVvhKKII&#43;7&#43;/uZ4rKKeRI4BdD8YPHUSXYnBtadQ=" media="screen">
+  <link rel="stylesheet" href="../../scss/fonts.min.5876f9895dfb5169189a2b4f8d9ad12bac1ff3dba16be70a3920be0f7f43b6fa.css" integrity="sha256-WHb5iV37UWkYmitPjZrRK6wf89uha&#43;cKOSC&#43;D39Dtvo=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.37b03cd108b0084e4ababe9502c1b15513cd0b02fdc84f10fd3d9045324902df.css" integrity="sha256-N7A80QiwCE5Kur6VAsGxVRPNCwL9yE8Q/T2QRTJJAt8=" media="screen">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
@@ -106,8 +106,92 @@
 <li>Go to the EC2 page and create an instance. Use the Amazon AMI t2.micro and leave everything as default except for the bootstrap script which is under <em>Advanced Details</em>.</li>
 <li>Use the below bootstrap script. This script would setup an Apache server, install php and php-mysql to your instance. It will also create an index page containing the php info and download a script from S3. Make sure you have the <strong>connect.php</strong> script on your own S3 bucket.
 <script type="application/javascript" src="//gist.github.com/jvcudis/d34b7d6c7ff909dbe94ca979329a4eef.js"></script></li>
-<li>To be continued&hellip;</li>
+<li>Click Next to add storage and leave everything as default. Make sure to use the web security group (http and ssh access). Launch the instance and use your existing keypair if it is available.</li>
+<li>To view the database connection endpoint, go to RDS -&gt; instances and select the running rds instance. You will see the connection settings there. AWS does not give you an IP address for the db endpoint, it gives you a DNS address.</li>
+<li>Next is to configure the db connection string by ssh-ing to the db instance. Do not forget to copy the connection endpoint. Open <strong>connect.php</strong> and replace the hostname to the copied value.</li>
+<li>Access the connect.php page and it will throw an error <code>Unable to connect to MySQL</code> this is because the DB and instance does not belong to the same VPC. To make this work, go to the RDS page and find the security group settings for the db, open the inbound tab and edit the settings. Add a new rule to allow MySQL/Aurora protocols. Leave protocol, port range   with default values and set the source to use the web security group we set for the instance. Save the new rule.</li>
+<li>Go back to the connect.php page and you will see a successful connection to the db.</li>
 </ol>
+
+<h3 id="rds-back-ups">RDS Back Ups</h3>
+
+<p>AWS offers 2 types of backups:</p>
+
+<h4 id="automated-backups">Automated Backups</h4>
+
+<ul>
+<li>allows user to recover database to any point in time within the retension period (0 - 35 days)</li>
+<li>takes full daily snapshot of the database and will store transaction logs throughout the day</li>
+<li>will be deleted when RDS instance is deleted</li>
+<li>enabled by default</li>
+<li>backup data is stored in S3 for free and it is equal to the size of the DB</li>
+<li>backups are taken within a defined window and backup process will affect the performance of the DB, storage I/O may be suspended and you may experience elevated latency</li>
+<li>when doing a recovery, AWS will chose the most rececnt daily backup and apply the transaction logs relevant to that day thus allowing users to do a point in time recovery within the retention period</li>
+</ul>
+
+<h4 id="database-snapshots">Database Snapshots</h4>
+
+<ul>
+<li>done manually</li>
+<li>stored even after you delete the original RDS instance</li>
+</ul>
+
+<blockquote>
+<p>IMPORTANT: When doing a db restore, either by automatic or manual way, the restored version of the database will be in a new RDS instance with a new DNS endpoint.</p>
+</blockquote>
+
+<h3 id="rds-encryption">RDS Encryption</h3>
+
+<p>Encryption at rest is supported for the following databases:</p>
+
+<ul>
+<li>MySQL</li>
+<li>Oracle</li>
+<li>SQL Server</li>
+<li>PostgreSQL</li>
+<li>MariaDB</li>
+<li>Aurora</li>
+</ul>
+
+<p>It is done using KMS. Once your RDS is encrypted, the data stored, as well as the backups, read replicas and snapshots are also encrypted. At present, encrypting an existing DB instance is not supported. To encrypt an existing database, you must first create a snapshot, make a copy of the snapshot and encrypt the copy.</p>
+
+<h3 id="multi-az-rds">Multi AZ RDS</h3>
+
+<p>Available on:</p>
+
+<ul>
+<li>MySQL Server</li>
+<li>Oracle</li>
+<li>SQL Server</li>
+<li>PostgreSQL</li>
+<li>MariaDB</li>
+<li>Aurora - by default, multi-az is turned on</li>
+</ul>
+
+<p>Multi AZ allows you to have an exact copy of your production database in another AZ. AWS handles replication. In the event of a planned DB maintenance, DB instance failure or an AZ failure, RDS will automatically failover to the standby so that database operations can resume quickly without any intervention.</p>
+
+<p>It is for disaster recovery only. Not primarily used for improving performance. Use read replicas for performance improvement.</p>
+
+<h3 id="rds-read-replicas">RDS Read Replicas</h3>
+
+<p>Available on:</p>
+
+<ul>
+<li>MySQL Server</li>
+<li>PostgreSQL</li>
+<li>MariaDB</li>
+<li>Aurora</li>
+</ul>
+
+<p>Allows users to have a read-only copy of the production database. This is achieved by using Asynchronous replication from the primary RDS instance to the read replica. You use replicas primarily for very read-heavy database workloads, like on a popular wordpress website. Used for scaling and not for disaster recovery. You must have automatic backups turned on in order to deploy a read replica.</p>
+
+<p>You are allowed a maximum of 5 read replica copies of any database and the read replica can have multi AZ and other region. A read replica can have it&rsquo;s own read replica too. Read replica will have its own DNS endpoint. You can create read replicas of Multi AZ source databases. Read replicas can be promoted to be their own databases and this would break the replication.</p>
+
+<p>To enable read replicas, go to your RDS instance and in Instance actions, select create read replica.</p>
+
+<h3 id="dynamodb">DynamoDB</h3>
+
+<h3 id="redshift">RedShift</h3>
   </div>
 </section>
 
