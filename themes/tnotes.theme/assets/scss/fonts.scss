@@ -46,3 +46,81 @@
   src:  url('{{ .Site.Params.subdomain }}/fonts/AnonymousPro-Bold.ttf');
   font-weight: bold;
 }
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/IBMPlexSans-Thin.ttf');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/IBMPlexSans-ExtraLight.ttf');
+  font-weight: 200;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/IBMPlexSans-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/IBMPlexSans-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/IBMPlexSans-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/IBMPlexSans-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'IBMPlexSans';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/IBMPlexSans-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/Roboto-Thin.ttf');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/Roboto-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/Roboto-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/Roboto-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/Roboto-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src:  url('{{ .Site.Params.subdomain }}/fonts/Roboto-Black.ttf');
+  font-weight: 900;
+}

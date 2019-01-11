@@ -66,4 +66,77 @@ It is a web service that makes it easy to deploy, operate and scale an in-memory
 5. Go to the EC2 page and create an instance. Use the Amazon AMI t2.micro and leave everything as default except for the bootstrap script which is under _Advanced Details_.
 6. Use the below bootstrap script. This script would setup an Apache server, install php and php-mysql to your instance. It will also create an index page containing the php info and download a script from S3. Make sure you have the **connect.php** script on your own S3 bucket.
 {{< gist jvcudis d34b7d6c7ff909dbe94ca979329a4eef >}}
-7. To be continued...
+7. Click Next to add storage and leave everything as default. Make sure to use the web security group (http and ssh access). Launch the instance and use your existing keypair if it is available.
+8. To view the database connection endpoint, go to RDS -> instances and select the running rds instance. You will see the connection settings there. AWS does not give you an IP address for the db endpoint, it gives you a DNS address.
+9. Next is to configure the db connection string by ssh-ing to the db instance. Do not forget to copy the connection endpoint. Open **connect.php** and replace the hostname to the copied value.
+10. Access the connect.php page and it will throw an error `Unable to connect to MySQL` this is because the DB and instance does not belong to the same VPC. To make this work, go to the RDS page and find the security group settings for the db, open the inbound tab and edit the settings. Add a new rule to allow MySQL/Aurora protocols. Leave protocol, port range   with default values and set the source to use the web security group we set for the instance. Save the new rule.
+11. Go back to the connect.php page and you will see a successful connection to the db.
+
+### RDS Back Ups
+
+AWS offers 2 types of backups:
+
+#### Automated Backups
+
+- allows user to recover database to any point in time within the retension period (0 - 35 days)
+- takes full daily snapshot of the database and will store transaction logs throughout the day
+- will be deleted when RDS instance is deleted
+- enabled by default
+- backup data is stored in S3 for free and it is equal to the size of the DB
+- backups are taken within a defined window and backup process will affect the performance of the DB, storage I/O may be suspended and you may experience elevated latency
+- when doing a recovery, AWS will chose the most rececnt daily backup and apply the transaction logs relevant to that day thus allowing users to do a point in time recovery within the retention period
+
+#### Database Snapshots
+
+- done manually
+- stored even after you delete the original RDS instance
+
+> IMPORTANT: When doing a db restore, either by automatic or manual way, the restored version of the database will be in a new RDS instance with a new DNS endpoint.
+
+### RDS Encryption
+
+Encryption at rest is supported for the following databases:
+
+- MySQL
+- Oracle
+- SQL Server
+- PostgreSQL
+- MariaDB
+- Aurora
+
+It is done using KMS. Once your RDS is encrypted, the data stored, as well as the backups, read replicas and snapshots are also encrypted. At present, encrypting an existing DB instance is not supported. To encrypt an existing database, you must first create a snapshot, make a copy of the snapshot and encrypt the copy.
+
+### Multi AZ RDS
+
+Available on:
+
+- MySQL Server
+- Oracle
+- SQL Server
+- PostgreSQL
+- MariaDB
+- Aurora - by default, multi-az is turned on
+
+Multi AZ allows you to have an exact copy of your production database in another AZ. AWS handles replication. In the event of a planned DB maintenance, DB instance failure or an AZ failure, RDS will automatically failover to the standby so that database operations can resume quickly without any intervention.
+
+It is for disaster recovery only. Not primarily used for improving performance. Use read replicas for performance improvement.
+
+### RDS Read Replicas
+
+Available on:
+
+- MySQL Server
+- PostgreSQL
+- MariaDB
+- Aurora
+
+Allows users to have a read-only copy of the production database. This is achieved by using Asynchronous replication from the primary RDS instance to the read replica. You use replicas primarily for very read-heavy database workloads, like on a popular wordpress website. Used for scaling and not for disaster recovery. You must have automatic backups turned on in order to deploy a read replica.
+
+You are allowed a maximum of 5 read replica copies of any database and the read replica can have multi AZ and other region. A read replica can have it's own read replica too. Read replica will have its own DNS endpoint. You can create read replicas of Multi AZ source databases. Read replicas can be promoted to be their own databases and this would break the replication.
+
+To enable read replicas, go to your RDS instance and in Instance actions, select create read replica.
+
+### DynamoDB
+
+
+### RedShift
