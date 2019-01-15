@@ -1,0 +1,6 @@
+<nav>
+  <div class="nav-links-container">
+    <span>{{ if .Prev }} PREV: <a href="{{ .Prev.Permalink }}">{{ .Prev.Title }}</a> {{ end }}</span>
+    <span>{{ if .Next }} NEXT: <a href="{{ .Next.Permalink }}">{{ .Next.Title }}</a> {{ end }}</span>
+  </div>
+</nav>

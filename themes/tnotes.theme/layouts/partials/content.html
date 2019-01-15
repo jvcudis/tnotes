@@ -1,8 +1,9 @@
 <section class="content__post">
+  {{ partial "nav-links.html" . }}
   <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
   <span>
-    {{ dateFormat "Jan 2, 2006" .Date }} FILED UNDER
-    {{ range .Params.categories }}{{ . }}{{ end }}
+    {{ dateFormat "12/01/2006" .Date }},
+    {{ range .Params.categories }}{{ . }} {{ end }}
   </span>
   <div class="wurds">
     {{ .Content }}
