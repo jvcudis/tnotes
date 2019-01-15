@@ -3,6 +3,7 @@ $greenies: #1CB067;
 $gray-world: #71787E;
 $sunray: #F3AD52;
 $black-soul: #152935;
+$opaque: rgba(0, 0, 0, 0.1);
 
 $post-font: 'IBMPlexSans', sans-serif;
 $main-font: 'PT Sans', sans-serif;
@@ -94,6 +95,13 @@ code {
   font-family: inherit;
 }
 
+p > code {
+  background: $opaque;
+  color: $greenies;
+  padding: 3px 8px;
+  font-family: monospace;
+}
+
 blockquote {
   margin: 0px;
   padding: 5px 20px;
@@ -114,6 +122,20 @@ sup.footnote-ref {
   flex-direction: column;
 }
 
+.header {
+  display: none;
+  height: 150px;
+  background-image: url('{{ .Site.Params.subdomain }}/images/background.jpg');
+  background-size: cover;
+  background-position-y: 40%;
+  display: flex;
+  justify-content: center;
+
+  .sidebar__title {
+    padding: 1rem;
+  }
+}
+
 .sidebar {
   min-width: 200px;
   width: 200px;
@@ -122,6 +144,7 @@ sup.footnote-ref {
   background-size: cover;
   background-position-x: 30%;
   color: #000;
+  display: flex;
   display: flex;
   justify-content: space-between;
 
@@ -258,5 +281,88 @@ ul.topics {
       letter-spacing: 2px;
       color: $black-soul;
     }
+  }
+}
+
+// media-queries
+/* SMARTPHONES PORTRAIT */
+@media only screen and (min-width: 300px) {
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .header {
+    display: flex;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .nav-links-container {
+    flex-direction: column;
+  }
+
+  .content {
+    padding: 1.5em 3em 1em 3em;
+  }
+}
+
+// /* SMARTPHONES LANDSCAPE */
+@media only screen and (min-width: 480px) {
+  body {
+    overflow-y: auto;
+  }
+
+  footer .nav-links-container span {
+    padding: 1rem 0 0;
+  }
+
+  .nav-links-container {
+    flex-direction: column;
+  }
+}
+
+/* TABLETS PORTRAIT */
+@media only screen and (min-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .nav-links-container {
+    flex-direction: row;
+  }
+}
+
+/* TABLET LANDSCAPE / DESKTOP */
+@media only screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+    height: 100%;
+  }
+
+  .sidebar {
+    display: flex;
+  }
+
+  .header {
+    display: none;
+  }
+
+  .content {
+    padding: 1.5em 10em 3em 5em;
+
+    > div:first-child {
+      flex: 2 0 0;
+    }
+
+    > div:last-child {
+      flex: 1 0 0;
+    }
+  }
+
+  .nav-links-container {
+    flex-direction: row;
   }
 }
