@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jenkins on Technical Notes</title>
+    <link>/categories/jenkins/</link>
+    <description>Recent content in Jenkins on Technical Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 31 Jan 2019 12:59:49 +1300</lastBuildDate>
+    
+	<atom:link href="/categories/jenkins/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</title>
+      <link>/jenkins/gotcha-on-multi-staged-dockerfile/</link>
+      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
+      
+      <guid>/jenkins/gotcha-on-multi-staged-dockerfile/</guid>
+      <description>&lt;p&gt;When I tried using the Jenkins &lt;strong&gt;Declarative Pipeline&lt;/strong&gt; to build, test and package a .NET Core lambda within a container, it throws an error saying &lt;code&gt;Cannot retrieve .Id from &#39;docker inspect &amp;lt;x&amp;gt; as &amp;lt;y&amp;gt;&#39;&lt;/code&gt; but it did build the different stages successfully, it&amp;rsquo;s just right after building that it throws the error. I did a bit of research and found out that it is an existing Jenkins plugin &lt;a href=&#34;https://issues.jenkins-ci.org/browse/JENKINS-44609&#34;&gt;issue&lt;/a&gt;.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

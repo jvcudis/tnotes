@@ -35,19 +35,21 @@
         
   
     <section class="content__post">
-  <h1><a href="../../lambdas/zipping-it-properly/">Zipping It Properly</a></h1>
+  <h1><a href="../../jenkins/gotcha-on-multi-staged-dockerfile/">Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</a></h1>
   <span>
-    12/07/2018,
+    01/31/2019,
     
-      lambdas
+      jenkins
     
-      gotchas
+      dotnet
+    
+      ci
     
   </span>
   <div class="wurds">
-    <p>If you have spent at least two hours of figuring out why your NodeJS lambda is throwing an error that says <code>Cannot find module '/var/task/index</code> then this is for you.
+    <p>When I tried using the Jenkins <strong>Declarative Pipeline</strong> to build, test and package a .NET Core lambda within a container, it throws an error saying <code>Cannot retrieve .Id from 'docker inspect &lt;x&gt; as &lt;y&gt;'</code> but it did build the different stages successfully, it&rsquo;s just right after building that it throws the error. I did a bit of research and found out that it is an existing Jenkins plugin <a href="https://issues.jenkins-ci.org/browse/JENKINS-44609">issue</a>.
 </p>
-    <a class="more-link" href="../../lambdas/zipping-it-properly/"><nobr>Read more</nobr></a>
+    <a class="more-link" href="../../jenkins/gotcha-on-multi-staged-dockerfile/"><nobr>Read more</nobr></a>
   </div>
 </section>
 

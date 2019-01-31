@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/jenkins/gotcha-on-multi-staged-dockerfile/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/lambdas/zipping-it-properly/</loc>
     <lastmod>2018-12-07T16:23:44+13:00</lastmod>
   </url>
@@ -51,8 +56,32 @@
   </url>
   
   <url>
+    <loc>/categories/ci/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/dotnet/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/gotchas/</loc>
     <lastmod>2018-12-07T16:23:44+13:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/jenkins/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/jenkins/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -87,7 +116,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
     <priority>0</priority>
   </url>
   

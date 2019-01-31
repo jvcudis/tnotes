@@ -21,11 +21,38 @@
     </item>
     
     <item>
+      <title>Ci</title>
+      <link>/categories/ci/</link>
+      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
+      
+      <guid>/categories/ci/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dotnet</title>
+      <link>/categories/dotnet/</link>
+      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
+      
+      <guid>/categories/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Gotchas</title>
       <link>/categories/gotchas/</link>
       <pubDate>Fri, 07 Dec 2018 16:23:44 +1300</pubDate>
       
       <guid>/categories/gotchas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>/categories/jenkins/</link>
+      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
+      
+      <guid>/categories/jenkins/</guid>
       <description></description>
     </item>
     
