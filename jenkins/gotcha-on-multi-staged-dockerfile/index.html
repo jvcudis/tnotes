@@ -47,180 +47,180 @@
     jenkins dotnet ci 
   </span>
   <div class="wurds">
-    <p>When I tried using the Jenkins <strong>Declarative Pipeline</strong> to build, test and package a .NET Core lambda within a container, it throws an error saying <code>Cannot retrieve .Id from 'docker inspect &lt;x&gt; as &lt;y&gt;'</code> but it did build the different stages successfully, it&rsquo;s just right after building that it throws the error. I did a bit of research and found out that it is an existing Jenkins plugin <a href="https://issues.jenkins-ci.org/browse/JENKINS-44609">issue</a>.
+    <p>When I tried using the Jenkins <strong>Declarative Pipeline</strong> to build, test and package a .NET Core lambda within a container using a multi-staged dockerfile, it throws an error saying <code>Cannot retrieve .Id from 'docker inspect &lt;x&gt; as &lt;y&gt;'</code>. The strange thing is that it <em>did</em> build the different stages successfully. I checked by running <code>docker images</code> to see what images are currently available in the system. I did a bit of research and found out that it is an existing issue of the Jenkins docker plugin <a href="https://issues.jenkins-ci.org/browse/JENKINS-44609">issue</a>.
 </p>
 
 <p>Below is the Jenkinsfile and Dockerfile that throws the error:</p>
 
 <p><code>Dockerfile.build</code>
-<div class="highlight"><div style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">20
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#069;font-weight:bold">FROM</span><span style="color:#c30"> microsoft/dotnet:2.1.503-sdk-alpine as appbuild</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#09f;font-style:italic"># Copy csproj and code and restore as distinct layers</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">WORKDIR</span><span style="color:#c30"> /app</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span>COPY /src ./<span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">RUN</span> dotnet restore<span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#09f;font-style:italic"># Copy the unit tests code and run the tests</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">FROM</span><span style="color:#c30"> appbuild as unittestrunner</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">WORKDIR</span><span style="color:#c30"> /tests</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span>COPY unittests ./<span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">ENTRYPOINT</span><span style="color:#c30"> [ &#34;dotnet&#34;, &#34;test&#34; ]</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#09f;font-style:italic"># After tests pass, publish app with library deps, and package the lambda</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">FROM</span><span style="color:#c30"> appbuild as lambdapackager</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">WORKDIR</span><span style="color:#c30"> /package</span><span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span>COPY --from<span style="color:#555">=</span>appbuild app/ ./<span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">RUN</span> apk update <span style="color:#555">&amp;&amp;</span> apk add zip <span style="color:#555">&amp;&amp;</span> <span style="color:#c30;font-weight:bold">\
-</span><span style="color:#c30;font-weight:bold"></span>    dotnet publish -c Release<span style="color:#a00;background-color:#faa">
-</span><span style="color:#a00;background-color:#faa"></span><span style="color:#069;font-weight:bold">ENTRYPOINT</span><span style="color:#c30"> [ &#34;dotnet&#34;, &#34;lambda&#34;, &#34;package&#34; ]</span></code></pre></td></tr></table>
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Dockerfile" data-lang="Dockerfile"><span style="color:#2c5dcd;font-weight:bold">FROM</span><span style="color:#0c6"> microsoft/dotnet:2.1.503-sdk-alpine as appbuild</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#0080ff;font-style:italic"># Copy csproj and code and restore as distinct layers</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">WORKDIR</span><span style="color:#0c6"> /app</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span>COPY /src ./<span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">RUN</span> dotnet restore<span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#0080ff;font-style:italic"># Copy the unit tests code and run the tests</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">FROM</span><span style="color:#0c6"> appbuild as unittestrunner</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">WORKDIR</span><span style="color:#0c6"> /tests</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span>COPY unittests ./<span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">ENTRYPOINT</span><span style="color:#0c6"> [ &#34;dotnet&#34;, &#34;test&#34; ]</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#0080ff;font-style:italic"># After tests pass, publish app with library deps, and package the lambda</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">FROM</span><span style="color:#0c6"> appbuild as lambdapackager</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">WORKDIR</span><span style="color:#0c6"> /package</span><span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span>COPY --from<span style="color:#2c5dcd">=</span>appbuild app/ ./<span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">RUN</span> apk update <span style="color:#2c5dcd">&amp;&amp;</span> apk add zip <span style="color:#2c5dcd">&amp;&amp;</span> <span style="color:#c5060b;font-weight:bold">\
+</span><span style="color:#c5060b;font-weight:bold"></span>    dotnet publish -c Release<span style="color:#fff;background-color:#c00">
+</span><span style="color:#fff;background-color:#c00"></span><span style="color:#2c5dcd;font-weight:bold">ENTRYPOINT</span><span style="color:#0c6"> [ &#34;dotnet&#34;, &#34;lambda&#34;, &#34;package&#34; ]</span></code></pre></td></tr></table>
 </div>
 </div></p>
 
 <p><code>Jenkinsfile</code>
-<div class="highlight"><div style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Jenkinsfile" data-lang="Jenkinsfile"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Jenkinsfile" data-lang="Jenkinsfile">pipeline {
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">pipeline <span style="color:#2c5dcd">{</span>
 
-  ...
+  <span style="color:#2c5dcd">...</span>
 
-  stages {
-    stage(&#39;Build&#39;) {
-      steps {
-        script {
-          docker.build(&#39;app&#39;, &#39;-f Dockerfile.build .&#39;)
-        }
-      }
-    }
+  stages <span style="color:#2c5dcd">{</span>
+    stage<span style="color:#2c5dcd">(</span><span style="color:#0c6">&#39;Build&#39;</span><span style="color:#2c5dcd">)</span> <span style="color:#2c5dcd">{</span>
+      steps <span style="color:#2c5dcd">{</span>
+        script <span style="color:#2c5dcd">{</span>
+          docker<span style="color:#2c5dcd">.</span><span style="color:#2c5dcd;font-style:italic">build</span><span style="color:#2c5dcd">(</span><span style="color:#0c6">&#39;app&#39;</span><span style="color:#2c5dcd">,</span> <span style="color:#0c6">&#39;-f Dockerfile.build .&#39;</span><span style="color:#2c5dcd">)</span>
+        <span style="color:#2c5dcd">}</span>
+      <span style="color:#2c5dcd">}</span>
+    <span style="color:#2c5dcd">}</span>
 
-    ...
+    <span style="color:#2c5dcd">...</span>
 
-  }
-}</code></pre></td></tr></table>
+  <span style="color:#2c5dcd">}</span>
+<span style="color:#2c5dcd">}</span></code></pre></td></tr></table>
 </div>
 </div></p>
 
 <p>I tried the workaround of removing the stage names and instead use the build number but it still throws the same error. I opted on not using the plugin and updated my Jenkinsfile.</p>
 
 <p><code>Jenkinsfile</code>
-<div class="highlight"><div style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Jenkinsfile" data-lang="Jenkinsfile"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">36
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Jenkinsfile" data-lang="Jenkinsfile">pipeline {
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-groovy" data-lang="groovy">pipeline <span style="color:#2c5dcd">{</span>
 
-  ...
+  <span style="color:#2c5dcd">...</span>
 
-  stages {
-    stage(&#39;Build&#39;) {
-      steps {
-        script {
-          sh &#34;docker build -t app -f Dockerfile.build .&#34;
-        }
-      }
-    }
+  stages <span style="color:#2c5dcd">{</span>
+    stage<span style="color:#2c5dcd">(</span><span style="color:#0c6">&#39;Build&#39;</span><span style="color:#2c5dcd">)</span> <span style="color:#2c5dcd">{</span>
+      steps <span style="color:#2c5dcd">{</span>
+        script <span style="color:#2c5dcd">{</span>
+          sh <span style="color:#0c6">&#34;docker build -t app -f Dockerfile.build .&#34;</span>
+        <span style="color:#2c5dcd">}</span>
+      <span style="color:#2c5dcd">}</span>
+    <span style="color:#2c5dcd">}</span>
 
-    stage(&#39;Run Unit Tests&#39;) {
-      steps {
-        script {
-          sh &#34;docker build --pull --target unittestrunner -t app:unittest -f Dockerfile.build .&#34;
-          sh &#34;docker run app:unittest&#34;
-        }
-      }
-    }
+    stage<span style="color:#2c5dcd">(</span><span style="color:#0c6">&#39;Run Unit Tests&#39;</span><span style="color:#2c5dcd">)</span> <span style="color:#2c5dcd">{</span>
+      steps <span style="color:#2c5dcd">{</span>
+        script <span style="color:#2c5dcd">{</span>
+          sh <span style="color:#0c6">&#34;docker build --pull --target unittestrunner -t app:unittest -f Dockerfile.build .&#34;</span>
+          sh <span style="color:#0c6">&#34;docker run app:unittest&#34;</span>
+        <span style="color:#2c5dcd">}</span>
+      <span style="color:#2c5dcd">}</span>
+    <span style="color:#2c5dcd">}</span>
 
-    stage(&#39;Package Lambda&#39;) {
-      steps {
-        script {
-          sh &#34;mkdir output&#34;
-          sh &#34;docker build --pull --target lambdapackager -t app:packager -f Dockerfile.build .&#34;
-          sh &#34;docker run --rm -v &#39;${PWD}&#39;/output:/package/bin/Release/netcoreapp2.0/ app:packager&#34;
-        }
-      }
-    }
+    stage<span style="color:#2c5dcd">(</span><span style="color:#0c6">&#39;Package Lambda&#39;</span><span style="color:#2c5dcd">)</span> <span style="color:#2c5dcd">{</span>
+      steps <span style="color:#2c5dcd">{</span>
+        script <span style="color:#2c5dcd">{</span>
+          sh <span style="color:#0c6">&#34;mkdir output&#34;</span>
+          sh <span style="color:#0c6">&#34;docker build --pull --target lambdapackager -t app:packager -f Dockerfile.build .&#34;</span>
+          sh <span style="color:#0c6">&#34;docker run --rm -v &#39;${PWD}&#39;/output:/package/bin/Release/netcoreapp2.0/ app:packager&#34;</span>
+        <span style="color:#2c5dcd">}</span>
+      <span style="color:#2c5dcd">}</span>
+    <span style="color:#2c5dcd">}</span>
 
-    ...
+    <span style="color:#2c5dcd">...</span>
 
-  }
-}</code></pre></td></tr></table>
+  <span style="color:#2c5dcd">}</span>
+<span style="color:#2c5dcd">}</span></code></pre></td></tr></table>
 </div>
 </div></p>
 

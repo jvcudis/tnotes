@@ -17,7 +17,7 @@
       <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
       
       <guid>/jenkins/gotcha-on-multi-staged-dockerfile/</guid>
-      <description>&lt;p&gt;When I tried using the Jenkins &lt;strong&gt;Declarative Pipeline&lt;/strong&gt; to build, test and package a .NET Core lambda within a container, it throws an error saying &lt;code&gt;Cannot retrieve .Id from &#39;docker inspect &amp;lt;x&amp;gt; as &amp;lt;y&amp;gt;&#39;&lt;/code&gt; but it did build the different stages successfully, it&amp;rsquo;s just right after building that it throws the error. I did a bit of research and found out that it is an existing Jenkins plugin &lt;a href=&#34;https://issues.jenkins-ci.org/browse/JENKINS-44609&#34;&gt;issue&lt;/a&gt;.
+      <description>&lt;p&gt;When I tried using the Jenkins &lt;strong&gt;Declarative Pipeline&lt;/strong&gt; to build, test and package a .NET Core lambda within a container using a multi-staged dockerfile, it throws an error saying &lt;code&gt;Cannot retrieve .Id from &#39;docker inspect &amp;lt;x&amp;gt; as &amp;lt;y&amp;gt;&#39;&lt;/code&gt;. The strange thing is that it &lt;em&gt;did&lt;/em&gt; build the different stages successfully. I checked by running &lt;code&gt;docker images&lt;/code&gt; to see what images are currently available in the system. I did a bit of research and found out that it is an existing issue of the Jenkins docker plugin &lt;a href=&#34;https://issues.jenkins-ci.org/browse/JENKINS-44609&#34;&gt;issue&lt;/a&gt;.
 &lt;/p&gt;</description>
     </item>
     
