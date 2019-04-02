@@ -4,13 +4,13 @@ date: 2019-01-31T12:59:49+13:00
 draft: false
 Categories: ["jenkins", "dotnet", "ci"]
 ---
-When I tried using the Jenkins **Declarative Pipeline** to build, test and package a .NET Core lambda within a container, it throws an error saying `Cannot retrieve .Id from 'docker inspect <x> as <y>'` but it did build the different stages successfully, it's just right after building that it throws the error. I did a bit of research and found out that it is an existing Jenkins plugin [issue](https://issues.jenkins-ci.org/browse/JENKINS-44609).
+When I tried using the Jenkins **Declarative Pipeline** to build, test and package a .NET Core lambda within a container using a multi-staged dockerfile, it throws an error saying `Cannot retrieve .Id from 'docker inspect <x> as <y>'`. The strange thing is that it *did* build the different stages successfully. I checked by running `docker images` to see what images are currently available in the system. I did a bit of research and found out that it is an existing issue of the Jenkins docker plugin [issue](https://issues.jenkins-ci.org/browse/JENKINS-44609).
 <!--more-->
 
 Below is the Jenkinsfile and Dockerfile that throws the error:
 
 `Dockerfile.build`
-{{< highlight Dockerfile "linenos=table,linenostart=1,style=manni" >}}
+{{< highlight Dockerfile "linenos=table,linenostart=1,style=rainbow_dash" >}}
 FROM microsoft/dotnet:2.1.503-sdk-alpine as appbuild
 
 # Copy csproj and code and restore as distinct layers
@@ -34,7 +34,7 @@ ENTRYPOINT [ "dotnet", "lambda", "package" ]
 {{< / highlight >}}
 
 `Jenkinsfile`
-{{< highlight Jenkinsfile "linenos=table,linenostart=1,style=manni" >}}
+{{< highlight groovy "linenos=table,linenostart=1,style=rainbow_dash" >}}
 pipeline {
 
   ...
@@ -54,11 +54,10 @@ pipeline {
 }
 {{< / highlight >}}
 
-
 I tried the workaround of removing the stage names and instead use the build number but it still throws the same error. I opted on not using the plugin and updated my Jenkinsfile.
 
 `Jenkinsfile`
-{{< highlight Jenkinsfile "linenos=table,linenostart=1,style=manni" >}}
+{{< highlight groovy "linenos=table,linenostart=1,style=rainbow_dash" >}}
 pipeline {
 
   ...
