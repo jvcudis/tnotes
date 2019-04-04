@@ -91,14 +91,13 @@ hr {
 }
 
 code {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-family: inherit;
 }
 
 p > code {
-  background: $opaque;
   color: $greenies;
-  padding: 3px 8px;
+  padding: 3px 5px;
   font-family: monospace;
 }
 
