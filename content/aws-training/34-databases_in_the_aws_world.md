@@ -1,7 +1,7 @@
 ---
 title: "Databases in the AWS World"
 date: 2018-11-23T15:12:55+13:00
-draft: false
+draft: true
 Categories: ["aws-training"]
 ---
 This talks about the basic database concepts, like what a relational database is. If you are a database admin and have a clear grasp about database management then this section could be skipped. This also tackles the different database solution offerings from AWS aside from the **Relational Database Service (RDS)**, which are DynamoDB, RedShift, Elasticache, and Aurora.

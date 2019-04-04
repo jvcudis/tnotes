@@ -2,7 +2,7 @@
 title: "AWS Load Balancers"
 date: 2018-11-02T10:41:49+13:00
 Categories: ["aws-training"]
-draft: false
+draft: true
 ---
 This section will talk about the basics of load balancers, the different types of load balancers AWS currently is offering, how to create them and associate them to an instance and some important points that is commonly asked in the AWS Solutions Architect Assosiate Certification Exam.
 <!--more-->

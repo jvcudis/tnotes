@@ -2,7 +2,7 @@
 title: "AMI Types Root Devices"
 date: 2018-11-02T9:16:37+13:00
 Categories: ["aws-training"]
-draft: false
+draft: true
 ---
 This section mainly talks about EC2 AMI types and the root device volumes provided by AWS. This also contains information on what is the difference between the available root device volumes -- EBS and Instance Store.
 <!--more-->

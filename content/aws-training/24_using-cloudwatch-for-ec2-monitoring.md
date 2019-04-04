@@ -2,7 +2,7 @@
 title: "Using CloudWatch for EC2 Monitoring"
 date: 2018-11-02T11:30:00+13:00
 Categories: ["aws-training"]
-draft: false
+draft: true
 ---
 This section talks about EC2 Monitoring -- the default monitoring and monitoring thru CloudWatch. This also talks about CloudWatch offerings and what each CloudWatch feature is can do.
 <!--more-->
