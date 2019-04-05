@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Setup on Technical Notes</title>
+    <link>/categories/setup/</link>
+    <description>Recent content in Setup on Technical Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Apr 2019 13:35:17 +1300</lastBuildDate>
+    
+	<atom:link href="/categories/setup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Alias for zshrc</title>
+      <link>/setup/alias-for-zshrc/</link>
+      <pubDate>Fri, 05 Apr 2019 13:35:17 +1300</pubDate>
+      
+      <guid>/setup/alias-for-zshrc/</guid>
+      <description>&lt;p&gt;When you get tired of typing &lt;code&gt;git status&lt;/code&gt; and all the other commonly used git commands, then the thought of creating an alias for such commands would have come out of your mind. I&amp;rsquo;m using &lt;a href=&#34;https://github.com/robbyrussell/oh-my-zsh&#34;&gt;oh-my-zsh&lt;/a&gt; and below is how I setup my git aliases on my &lt;code&gt;.zshrc&lt;/code&gt; file.
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
