@@ -15,4 +15,6 @@ alias gcom='f() { git commit -m $1 };f'
 alias gadd='f() { git add $1 };f'
 {{< / highlight >}}
 
-Once you've saved your changes, you need to source the file so that the changes would be applied to the environment.
+Once you've saved your changes, you need to source the file so that the changes would be applied to the environment. If you want something cheeky aliases, (bullias)[checkout https://github.com/bullgit/bullias] :smiley:
+
+![alias-on-action](/images/git-alias-on-action.gif)
