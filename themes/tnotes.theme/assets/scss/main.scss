@@ -153,7 +153,6 @@ sup.footnote-ref {
     padding: 30px;
   }
 
-
   &__title {
     color: $snow-white;
 
@@ -192,6 +191,11 @@ sup.footnote-ref {
   overflow-y: auto;
   padding: 1.5em 10em 3em 5em;
   font-family: $post-font;
+
+  a {
+    color: $sunray !important;
+    font-weight: bold;
+  }
 
   > div:first-child {
     flex: 2 0 0;
@@ -279,7 +283,7 @@ ul.topics {
       text-decoration: underline;
       text-transform: uppercase;
       letter-spacing: 2px;
-      color: $black-soul;
+      color: $black-soul !important;
     }
   }
 }
