@@ -35,21 +35,17 @@
         
   
     <section class="content__post">
-  <h1><a href="../jenkins/gotcha-on-multi-staged-dockerfile/">Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</a></h1>
+  <h1><a href="../heroku/deploying-dotnet-core-apps-to-heroku/">Deploying Dotnet Core Apps to Heroku</a></h1>
   <span>
-    01/31/2019,
+    08/28/2019,
     
-      jenkins
-    
-      dotnet
-    
-      ci
+      heroku
     
   </span>
   <div class="wurds">
-    <p>When I tried using the Jenkins <strong>Declarative Pipeline</strong> to build, test and package a .NET Core lambda within a container using a multi-staged dockerfile, it throws an error saying <code>Cannot retrieve .Id from 'docker inspect &lt;x&gt; as &lt;y&gt;'</code>. The strange thing is that it <em>did</em> build the different stages successfully. I checked by running <code>docker images</code> to see what images are currently available in the system. I did a bit of research and found out that it is an existing issue of the Jenkins docker plugin <a href="https://issues.jenkins-ci.org/browse/JENKINS-44609">issue</a>.
+    <p>The team I was working with has a test that has been failing for months because said test is looking for a service that does not exist in the test environment it is running on. In local development, the developers have setup mock services for them but they have not setup anything that can be consumed by the app deployed in the test environment. It was a bit disturbing for me seeing a test failing for months without having any idea why it was like that or why it is left in that state.
 </p>
-    <a class="more-link" href="../jenkins/gotcha-on-multi-staged-dockerfile/"><nobr>Read more</nobr></a>
+    <a class="more-link" href="../heroku/deploying-dotnet-core-apps-to-heroku/"><nobr>Read more</nobr></a>
   </div>
 </section>
 

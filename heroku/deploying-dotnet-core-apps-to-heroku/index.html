@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Technical Notes</title>
+  
+  
+  <link rel="stylesheet" href="../../scss/fonts.min.b4313f6b4ded7426646942ea7690be189339bfb5da0ce62edad9937c2061c373.css" integrity="sha256-tDE/a03tdCZkaULqdpC&#43;GJM5v7XaDOYu2tmTfCBhw3M=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.dc416cb8d463c2d10918cb6b7d19a9205f5dc531687491e1a916482f06593de4.css" integrity="sha256-3EFsuNRjwtEJGMtrfRmpIF9dxTFodJHhqRZILwZZPeQ=" media="screen">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+  <body>
+    <div class="sidebar container">
+  <div class="sidebar__title">
+    <h1><a href="../../">t.notes</a></h1>
+    <br />
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
+  </div>
+  <div class="sidebar__meta">
+    <span>Built with Hugo.</span><br>
+    <span>Powered by Github.</span>
+  </div>
+</div>
+
+    <div class="header">
+  <div class="sidebar__title">
+    <h1><a href="../../">t.notes</a></h1>
+  </div>
+</div>
+
+    <div class="content container">
+      <div>
+        <div class="content__header"></div>
+        
+  <section class="content__post">
+  <nav>
+  <div class="nav-links-container">
+    <span></span>
+    <span> NEXT: <a href="../../setup/alias-for-zshrc/">Alias for zshrc</a> </span>
+  </div>
+</nav>
+
+  <h1><a href="../../heroku/deploying-dotnet-core-apps-to-heroku/">Deploying Dotnet Core Apps to Heroku</a></h1>
+  <span>
+    828/08/2019,
+    heroku 
+  </span>
+  <div class="wurds">
+    <p>The team I was working with has a test that has been failing for months because said test is looking for a service that does not exist in the test environment it is running on. In local development, the developers have setup mock services for them but they have not setup anything that can be consumed by the app deployed in the test environment. It was a bit disturbing for me seeing a test failing for months without having any idea why it was like that or why it is left in that state.
+</p>
+
+<p>For somebody that is not familiar with the source code and just came upon the project to implement a version-controlled deployment workflow, it was alarming because I thought it was me who broke the tests. Personally, I would prefer for projects to be more transparent of its current state. One way to achieve that is to write something in the README file about the broken test, skipping the test could also be an option or just fix it. Anyways&hellip; Long story short, I deployed the mock service to Heroku to satisfy the failing-tests-hater self.</p>
+
+<p>So everything is all good and green&hellip; NOT! 😄 Apparently, it&rsquo;s a big security issue! I have an inkling that deploying to Heroku could be against the laws that the security team abides to but faster deployment means faster results so I went ahead with it. It actually took a week for the security team to figure that out. Ha! I&rsquo;m still not sure if they found out because somebody reported it or because they have a mechanism for knowing such things. <strong>It would be cool to have something like a bot or a Githup App reporting security issues to developers.</strong></p>
+
+<p>If you plan on using Heroku, the documentation on <a href="https://devcenter.heroku.com/articles/container-registry-and-runtime">Docker Deploys</a> is a good starting point. The most important thing to remember is that Heroku allocates the port for your app dynamically so that means you have to use the <code>$PORT</code> environment variable.</p>
+
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#2c5dcd;font-weight:bold">FROM</span> <span style="color:#0c6">mcr.microsoft.com/dotnet/core/sdk:2.2</span>
+<span style="color:#0c6">&lt;do</span> <span style="color:#0c6">app</span> <span style="color:#0c6">things</span> <span style="color:#0c6">here&gt;</span>
+<span style="color:#0c6">CMD</span> <span style="color:#0c6">ASPNETCORE_URLS=http://0.0.0.0:</span>$PORT <span style="color:#0c6">dotnet</span> <span style="color:#0c6">run</span> <span style="color:#0c6">--project</span> <span style="color:#0c6">App.csproj</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<blockquote>
+<p>In a Node app, the <code>$PORT</code> is binded like so <code>CMD npm start --bind 0.0.0.0:$PORT</code></p>
+</blockquote>
+
+<p>Given that we have created a Heroku app named &lsquo;mighty-river&rsquo;, we can push the container to the Heroku docker registry. Make sure to build and run the container locally first before pushing it. Initially, I had problems pushing the container because Heroku could not find the app but I found out that you can use the <code>-a</code> parameter to specify the app name but it was tricky figuring that out because it was not really that visible in the documentation. Once pushed, you can release the app and everything should be good.</p>
+
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#a6a6a6">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ heroku container:push web -a mighty-river
+$ heroku container:release web -a mighty-river</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>Overall, Heroku is pretty easy to use. I would like better documentation and more examples on how to deploy different dockerized applications using different technology stack.</p>
+  </div>
+</section>
+
+  <footer>
+  <nav>
+  <div class="nav-links-container">
+    <span></span>
+    <span> NEXT: <a href="../../setup/alias-for-zshrc/">Alias for zshrc</a> </span>
+  </div>
+</nav>
+
+</footer>
+
+
+      </div>
+      <div>
+  <div class="social-media-container">
+    TOPICS
+  </div>
+  <div class="topic-container">
+    <ul class="topics">
+      
+        
+          <li><a href="../../categories/ci/">ci</a></li>
+        
+      
+        
+          <li><a href="../../categories/dotnet/">dotnet</a></li>
+        
+      
+        
+          <li><a href="../../categories/gotchas/">gotchas</a></li>
+        
+      
+        
+          <li><a href="../../categories/heroku/">heroku</a></li>
+        
+      
+        
+          <li><a href="../../categories/jenkins/">jenkins</a></li>
+        
+      
+        
+          <li><a href="../../categories/lambdas/">lambdas</a></li>
+        
+      
+        
+          <li><a href="../../categories/new-relic/">new-relic</a></li>
+        
+      
+        
+          <li><a href="../../categories/setup/">setup</a></li>
+        
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+  </body>
+</html>
