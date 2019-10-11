@@ -1,5 +1,5 @@
 ---
-title: "Trigger Github Pages Build"
+title: "Triggering Github Pages Build using Github Actions"
 date: 2019-10-08T14:37:09+13:00
 Categories: ["ci", "gh-pages", "static pages", "github actions"]
 draft: false
