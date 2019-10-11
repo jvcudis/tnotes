@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ci on Technical Notes</title>
-    <link>/categories/ci/</link>
-    <description>Recent content in Ci on Technical Notes</description>
+    <title>Gh Pages on Technical Notes</title>
+    <link>/categories/gh-pages/</link>
+    <description>Recent content in Gh Pages on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 08 Oct 2019 14:37:09 +1300</lastBuildDate>
     
-	<atom:link href="/categories/ci/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/categories/gh-pages/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>/github-actions/trigger-gh-pages-build/</guid>
       <description>&lt;p&gt;Recently, I&amp;rsquo;ve been playing with &lt;a href=&#34;https://help.github.com/en/categories/automating-your-workflow-with-github-actions&#34;&gt;Github Actions&lt;/a&gt; and the first thing that I&amp;rsquo;ve thought of doing is how I can use Github Actions aka &lt;strong&gt;Steve&lt;/strong&gt; (let&amp;rsquo;s name it Steve because Github Actions is just too unfriendly! ) to deploy my statically-generated site to Github Pages. The current deployment workflow involves TravisCI handling the generation of static files and deploying them to the &lt;code&gt;gh-pages&lt;/code&gt; branch using a &lt;a href=&#34;https://docs.travis-ci.com/user/deployment/pages/&#34;&gt;built-in configuration&lt;/a&gt;.
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</title>
-      <link>/jenkins/gotcha-on-multi-staged-dockerfile/</link>
-      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
-      
-      <guid>/jenkins/gotcha-on-multi-staged-dockerfile/</guid>
-      <description>&lt;p&gt;When I tried using the Jenkins &lt;strong&gt;Declarative Pipeline&lt;/strong&gt; to build, test and package a .NET Core lambda within a container using a multi-staged dockerfile, it throws an error saying &lt;code&gt;Cannot retrieve .Id from &#39;docker inspect &amp;lt;x&amp;gt; as &amp;lt;y&amp;gt;&#39;&lt;/code&gt;. The strange thing is that it &lt;em&gt;did&lt;/em&gt; build the different stages successfully. I checked by running &lt;code&gt;docker images&lt;/code&gt; to see what images are currently available in the system. I did a bit of research and found out that it is an existing issue of the Jenkins docker plugin &lt;a href=&#34;https://issues.jenkins-ci.org/browse/JENKINS-44609&#34;&gt;issue&lt;/a&gt;.
 &lt;/p&gt;</description>
     </item>
     
