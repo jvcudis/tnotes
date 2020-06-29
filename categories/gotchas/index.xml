@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Gotchas on Technical Notes</title>
+    <title>gotchas on Technical Notes</title>
     <link>/categories/gotchas/</link>
-    <description>Recent content in Gotchas on Technical Notes</description>
+    <description>Recent content in gotchas on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Dec 2018 16:23:44 +1300</lastBuildDate>
@@ -13,12 +13,11 @@
     
     <item>
       <title>Zipping It Properly</title>
-      <link>/lambdas/zipping-it-properly/</link>
+      <link>/posts/zipping-it-properly/</link>
       <pubDate>Fri, 07 Dec 2018 16:23:44 +1300</pubDate>
       
-      <guid>/lambdas/zipping-it-properly/</guid>
-      <description>&lt;p&gt;If you have spent at least two hours of figuring out why your NodeJS lambda is throwing an error that says &lt;code&gt;Cannot find module &#39;/var/task/index&lt;/code&gt; then this is for you.
-&lt;/p&gt;</description>
+      <guid>/posts/zipping-it-properly/</guid>
+      <description>&lt;p&gt;If you have spent at least two hours of figuring out why your NodeJS lambda is throwing an error that says &lt;code&gt;Cannot find module &#39;/var/task/index&lt;/code&gt; then this is for you.&lt;/p&gt;</description>
     </item>
     
   </channel>

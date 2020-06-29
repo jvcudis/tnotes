@@ -1,153 +1,109 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/github-actions/trigger-gh-pages-build/</loc>
-    <lastmod>2019-10-08T14:37:09+13:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/heroku/deploying-dotnet-core-apps-to-heroku/</loc>
-    <lastmod>2019-08-28T14:59:38+12:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/setup/alias-for-zshrc/</loc>
-    <lastmod>2019-04-05T13:35:17+13:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/jenkins/gotcha-on-multi-staged-dockerfile/</loc>
-    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/lambdas/zipping-it-properly/</loc>
-    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/new-relic/sanitizing-json-deployment-payload/</loc>
-    <lastmod>2018-11-21T16:55:11+13:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
-    <priority>0</priority>
+    <lastmod>2019-10-08T14:37:09+13:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/ci/</loc>
     <lastmod>2019-10-08T14:37:09+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/dotnet/</loc>
-    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/gh-pages/</loc>
     <lastmod>2019-10-08T14:37:09+13:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/github-actions/</loc>
     <lastmod>2019-10-08T14:37:09+13:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>/github-actions/</loc>
+    <loc>/posts/</loc>
     <lastmod>2019-10-08T14:37:09+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/gotchas/</loc>
-    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/heroku/</loc>
-    <lastmod>2019-08-28T14:59:38+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/heroku/</loc>
-    <lastmod>2019-08-28T14:59:38+12:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/jenkins/</loc>
-    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/jenkins/</loc>
-    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/lambdas/</loc>
-    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/lambdas/</loc>
-    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/new-relic/</loc>
-    <lastmod>2018-11-21T16:55:11+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/new-relic/</loc>
-    <lastmod>2018-11-21T16:55:11+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/setup/</loc>
-    <lastmod>2019-04-05T13:35:17+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/setup/</loc>
-    <lastmod>2019-04-05T13:35:17+13:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/static-pages/</loc>
     <lastmod>2019-10-08T14:37:09+13:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
     <lastmod>2019-10-08T14:37:09+13:00</lastmod>
-    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/posts/trigger-gh-pages-build/</loc>
+    <lastmod>2019-10-08T14:37:09+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/deploying-dotnet-core-apps-to-heroku/</loc>
+    <lastmod>2019-08-28T14:59:38+12:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/heroku/</loc>
+    <lastmod>2019-08-28T14:59:38+12:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/alias-for-zshrc/</loc>
+    <lastmod>2019-04-05T13:35:17+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/setup/</loc>
+    <lastmod>2019-04-05T13:35:17+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/dotnet/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/jenkins/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/gotcha-on-multi-staged-dockerfile/</loc>
+    <lastmod>2019-01-31T12:59:49+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/gotchas/</loc>
+    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/lambdas/</loc>
+    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/zipping-it-properly/</loc>
+    <lastmod>2018-12-07T16:23:44+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/new-relic/</loc>
+    <lastmod>2018-11-21T16:55:11+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/posts/sanitizing-json-deployment-payload/</loc>
+    <lastmod>2018-11-21T16:55:11+13:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
   </url>
   
 </urlset>

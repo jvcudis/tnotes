@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>New Relic on Technical Notes</title>
+    <title>new-relic on Technical Notes</title>
     <link>/categories/new-relic/</link>
-    <description>Recent content in New Relic on Technical Notes</description>
+    <description>Recent content in new-relic on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Nov 2018 16:55:11 +1300</lastBuildDate>
@@ -13,12 +13,11 @@
     
     <item>
       <title>Sanitizing JSON Deployment Payload</title>
-      <link>/new-relic/sanitizing-json-deployment-payload/</link>
+      <link>/posts/sanitizing-json-deployment-payload/</link>
       <pubDate>Wed, 21 Nov 2018 16:55:11 +1300</pubDate>
       
-      <guid>/new-relic/sanitizing-json-deployment-payload/</guid>
-      <description>&lt;p&gt;A few weeks ago, I was tasked to create New Relic deployment markers for our applications that have APM enabled. Just to give a background, I am pretty much new to New Relic and found the deployment markers pretty helpful when you want to know (and bl@me!) if someone has added a change that has compromised the performance of your application, &amp;lsquo;coz it&amp;rsquo;s all about traceability these days! Hurrah!
-&lt;/p&gt;</description>
+      <guid>/posts/sanitizing-json-deployment-payload/</guid>
+      <description>&lt;p&gt;A few weeks ago, I was tasked to create New Relic deployment markers for our applications that have APM enabled. Just to give a background, I am pretty much new to New Relic and found the deployment markers pretty helpful when you want to know (and bl@me!) if someone has added a change that has compromised the performance of your application, &amp;lsquo;coz it&amp;rsquo;s all about traceability these days! Hurrah!&lt;/p&gt;</description>
     </item>
     
   </channel>

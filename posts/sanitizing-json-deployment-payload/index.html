@@ -33,22 +33,42 @@
       <main class="container">
         <section class="content">
           
-  
-    <article class="content__post summary">
+  <article class="content__post">
+  <nav class="nav-links-container">
+  <span></span>
+  <span> NEXT: <a href="../../posts/zipping-it-properly/">Zipping It Properly</a> </span>
+</nav>
+
   <h1><a href="../../posts/sanitizing-json-deployment-payload/">Sanitizing JSON Deployment Payload</a></h1>
   <div class="content__tags">
-    11/21/2018,
-    
-      new-relic
-    
+    1121/11/2018,
+    new-relic 
   </div>
   <div class="wurds">
     <p>A few weeks ago, I was tasked to create New Relic deployment markers for our applications that have APM enabled. Just to give a background, I am pretty much new to New Relic and found the deployment markers pretty helpful when you want to know (and bl@me!) if someone has added a change that has compromised the performance of your application, &lsquo;coz it&rsquo;s all about traceability these days! Hurrah!</p>
-    <a class="more-link link" href="../../posts/sanitizing-json-deployment-payload/"><nobr>Read more</nobr></a>
+<p>There is already an exisiting solution that I can copy-paste which comes from one of the developers.</p>
+<script type="application/javascript" src="https://gist.github.com/jvcudis/085de902a13714efcd167e71f18ed93d.js"></script>
+
+<p>But being a &lsquo;DevOps&rsquo; person in the team, I have to ask if the deployment markers are giving them (devs! in this case) the necessary information they want. A short background, I&rsquo;ve been doing the devops gig for approximately 4 months now and sort of learning by doing a lot of &lsquo;Google search&rsquo; and seriously reading the &lsquo;Accelerate&rsquo; book. I did a survey of what the developers think as the most (or more) helpful data they want to see for the deployment marker. The devs chose to see the information on the latest commit from their repository. In theory, it would have helped if the releases are tagged so in that way, we can use the tag as basis for revision. But that&rsquo;s another discussion with the team.</p>
+<p>I thought it would be easy updating the code to something like:</p>
+<script type="application/javascript" src="https://gist.github.com/jvcudis/6960f1ecb76e4219d2d965a5b0710056.js"></script>
+
+<p>Here&rsquo;s the thing, JSON payload string interpolation is confusing. For example, we have something like <code>This is a small change yo</code> as the value of the <code>$GIT_COMMIT_MSG</code>. Apparently, the interpolation we are using which is <code>&quot;'$VAR_HERE'&quot;</code> only supports a single string, if it&rsquo;s a collection of strings (a sentence in layman&rsquo;s term) then it would just throw an error. So in comes JSON sanitization by using <code>jq</code>.</p>
+<p>So below is the updated code:</p>
+<script type="application/javascript" src="https://gist.github.com/jvcudis/f1cc85fe5198334e0b8574daca580752.js"></script>
+
+<p>This piece of code will run after a successful deployment. And we are using TeamCity as our tool for that.</p>
   </div>
+  <footer>
+  <nav class="nav-links-container">
+  <span></span>
+  <span> NEXT: <a href="../../posts/zipping-it-properly/">Zipping It Properly</a> </span>
+</nav>
+
+</footer>
+
 </article>
 
-  
 
         </section>
         <section class="topics-sidebar">

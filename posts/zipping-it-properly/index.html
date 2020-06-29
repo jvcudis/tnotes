@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <title>Technical Notes</title>
+  
+  
+  <link rel="stylesheet" href="../../scss/fonts.min.400e0950b6833e46b1d89610e316dcf84f628b1362e9a12a7f87fa84d14f5a52.css" integrity="sha256-QA4JULaDPkax2JYQ4xbc&#43;E9iixNi6aEqf4f6hNFPWlI=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.cb52c8dd91c835651e6efb6d950cd0e0c9c0ff6bd4279f49340bb1af8a3aea63.css" integrity="sha256-y1LI3ZHINWUebvttlQzQ4MnA/2vUJ59JNAuxr4o66mM=" media="screen">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+</head>
+
+  <body>
+    <div class="wrapper">
+      <aside class="sidebar">
+  <div class="sidebar__title">
+    <h1><a class="header-link" href="../../">t.notes</a></h1>
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
+  </div>
+  <div class="sidebar__meta">
+    <span>Built with Hugo.</span><br>
+    <span>Powered by Github.</span>
+  </div>
+</aside>
+
+      <div class="header">
+  <div class="header__title">
+    <h1><a class="header-link" href="../../">t.notes</a></h1>
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
+  </div>
+</div>
+
+      <main class="container">
+        <section class="content">
+          
+  <article class="content__post">
+  <nav class="nav-links-container">
+  <span> PREV: <a href="../../posts/sanitizing-json-deployment-payload/">Sanitizing JSON Deployment Payload</a> </span>
+  <span> NEXT: <a href="../../posts/gotcha-on-multi-staged-dockerfile/">Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</a> </span>
+</nav>
+
+  <h1><a href="../../posts/zipping-it-properly/">Zipping It Properly</a></h1>
+  <div class="content__tags">
+    127/12/2018,
+    lambdas gotchas 
+  </div>
+  <div class="wurds">
+    <p>If you have spent at least two hours of figuring out why your NodeJS lambda is throwing an error that says <code>Cannot find module '/var/task/index</code> then this is for you.</p>
+<p>Given that you hava an npm project with the following <code>package.json</code> file.</p>
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<span style="color:#2c5dcd;font-weight:bold">&#34;name&#34;</span>: <span style="color:#0c6">&#34;Test&#34;</span>,
+<span style="color:#2c5dcd;font-weight:bold">&#34;version&#34;</span>: <span style="color:#0c6">&#34;1.0.0&#34;</span>,
+<span style="color:#2c5dcd;font-weight:bold">&#34;description&#34;</span>: <span style="color:#0c6">&#34;&#34;</span>,
+<span style="color:#2c5dcd;font-weight:bold">&#34;main&#34;</span>: <span style="color:#0c6">&#34;main.js&#34;</span>,
+<span style="color:#2c5dcd;font-weight:bold">&#34;author&#34;</span>: <span style="color:#0c6">&#34;jvcudis@gmail.com&#34;</span>,
+<span style="color:#2c5dcd;font-weight:bold">&#34;license&#34;</span>: <span style="color:#0c6">&#34;ISC&#34;</span>
+}</code></pre></td></tr></table>
+</div>
+</div>
+<p>And you have a <code>main.js</code> file..</p>
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">exports.handler <span style="color:#2c5dcd">=</span> async (event) =&gt; {
+<span style="color:#2c5dcd;font-weight:bold">const</span> resp <span style="color:#2c5dcd">=</span> postToES(JSON.stringify(event))
+
+<span style="color:#2c5dcd;font-weight:bold">let</span> response <span style="color:#2c5dcd">=</span> {
+statusCode<span style="color:#2c5dcd">:</span> <span style="color:#5918bb;font-weight:bold">200</span>,
+resp<span style="color:#2c5dcd">:</span> resp,
+body<span style="color:#2c5dcd">:</span> JSON.stringify(<span style="color:#0c6">&#39;Hello from Lambda!&#39;</span>),
+};
+
+<span style="color:#2c5dcd;font-weight:bold">return</span> response;
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>Then you try to create a deployment package by&hellip;</p>
+<div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0080ff;font-style:italic"># Given that you are currently within the project directory</span>
+
+<span style="color:#c5060b;font-weight:bold">\$</span> zip -r project.zip <span style="color:#c5060b;font-weight:bold">\*</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Once you have the zip file, you go to your AWS console and try to upload it.</p>
+<p>By default, the lambda handler is set to <code>index.handler</code>. When you have a different filename aside from <code>index.js</code> then you have to change the default handler to that value, in this case it has to be changed to <code>main.handler</code> since our entry file is <code>main.js</code>.</p>
+<p>Gotcha!</p>
+  </div>
+  <footer>
+  <nav class="nav-links-container">
+  <span> PREV: <a href="../../posts/sanitizing-json-deployment-payload/">Sanitizing JSON Deployment Payload</a> </span>
+  <span> NEXT: <a href="../../posts/gotcha-on-multi-staged-dockerfile/">Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</a> </span>
+</nav>
+
+</footer>
+
+</article>
+
+
+        </section>
+        <section class="topics-sidebar">
+          <nav class="topic-container">
+  <h3>TOPICS</h3>
+  <ul class="topics">
+    
+      
+        <li><a href="../../categories/ci/">ci</a></li>
+      
+    
+      
+        <li><a href="../../categories/dotnet/">dotnet</a></li>
+      
+    
+      
+        <li><a href="../../categories/gh-pages/">gh-pages</a></li>
+      
+    
+      
+        <li><a href="../../categories/github-actions/">github-actions</a></li>
+      
+    
+      
+        <li><a href="../../categories/gotchas/">gotchas</a></li>
+      
+    
+      
+        <li><a href="../../categories/heroku/">heroku</a></li>
+      
+    
+      
+        <li><a href="../../categories/jenkins/">jenkins</a></li>
+      
+    
+      
+        <li><a href="../../categories/lambdas/">lambdas</a></li>
+      
+    
+      
+        <li><a href="../../categories/new-relic/">new-relic</a></li>
+      
+    
+      
+        <li><a href="../../categories/setup/">setup</a></li>
+      
+    
+      
+        <li><a href="../../categories/static-pages/">static-pages</a></li>
+      
+    
+  </ul>
+</nav>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

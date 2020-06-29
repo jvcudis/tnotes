@@ -33,22 +33,49 @@
       <main class="container">
         <section class="content">
           
-  
-    <article class="content__post summary">
+  <article class="content__post">
+  <nav class="nav-links-container">
+  <span> PREV: <a href="../../posts/gotcha-on-multi-staged-dockerfile/">Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</a> </span>
+  <span> NEXT: <a href="../../posts/deploying-dotnet-core-apps-to-heroku/">Deploying Dotnet Core Apps to Heroku</a> </span>
+</nav>
+
   <h1><a href="../../posts/alias-for-zshrc/">Alias for zshrc</a></h1>
   <div class="content__tags">
-    04/05/2019,
-    
-      setup
-    
+    45/04/2019,
+    setup 
   </div>
   <div class="wurds">
     <p>When you get tired of typing <code>git status</code> and all the other commonly used git commands, then the thought of creating an alias for such commands would have come out of your mind. I&rsquo;m using <a href="https://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a> and below is how I setup my git aliases on my <code>.zshrc</code> file.</p>
-    <a class="more-link link" href="../../posts/alias-for-zshrc/"><nobr>Read more</nobr></a>
+<p><div class="highlight"><div style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#4d4d4d;background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#5918bb;font-weight:bold">alias</span> gs<span style="color:#2c5dcd">=</span><span style="color:#0c6">&#34;git status&#34;</span>
+<span style="color:#5918bb;font-weight:bold">alias</span> gpush<span style="color:#2c5dcd">=</span><span style="color:#0c6">&#39;f() { git push origin $1 };f&#39;</span>
+<span style="color:#5918bb;font-weight:bold">alias</span> gcheck<span style="color:#2c5dcd">=</span><span style="color:#0c6">&#39;f() { git checkout $1 };f&#39;</span>
+<span style="color:#5918bb;font-weight:bold">alias</span> gcom<span style="color:#2c5dcd">=</span><span style="color:#0c6">&#39;f() { git commit -m $1 };f&#39;</span>
+<span style="color:#5918bb;font-weight:bold">alias</span> gadd<span style="color:#2c5dcd">=</span><span style="color:#0c6">&#39;f() { git add $1 };f&#39;</span></code></pre></td></tr></table>
+</div>
+</div>
+<strong>LINE 2</strong>: Notice the function assigned as alias, this code means that the alias accepts an arg <code>$1</code> and runs the function when the alias is used</p>
+<p>Once you&rsquo;ve saved your changes, you need to source the file so that the changes would be applied to the environment. If you want something cheeky aliases, (bullias)[checkout https://github.com/bullgit/bullias] 😃</p>
+<p><img src="../../images/git-alias-on-action.gif" alt="alias-on-action"></p>
   </div>
+  <footer>
+  <nav class="nav-links-container">
+  <span> PREV: <a href="../../posts/gotcha-on-multi-staged-dockerfile/">Jenkins Declarative Pipelines Gotcha When Using Multi-Staged Dockerfile</a> </span>
+  <span> NEXT: <a href="../../posts/deploying-dotnet-core-apps-to-heroku/">Deploying Dotnet Core Apps to Heroku</a> </span>
+</nav>
+
+</footer>
+
 </article>
 
-  
 
         </section>
         <section class="topics-sidebar">

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Technical Notes</title>
@@ -6,12 +6,13 @@
     <description>Recent content in Categories on Technical Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Tue, 08 Oct 2019 14:37:09 +1300</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ci</title>
+      <title>ci</title>
       <link>/categories/ci/</link>
       <pubDate>Tue, 08 Oct 2019 14:37:09 +1300</pubDate>
       
@@ -20,16 +21,7 @@
     </item>
     
     <item>
-      <title>Dotnet</title>
-      <link>/categories/dotnet/</link>
-      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
-      
-      <guid>/categories/dotnet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Gh Pages</title>
+      <title>gh-pages</title>
       <link>/categories/gh-pages/</link>
       <pubDate>Tue, 08 Oct 2019 14:37:09 +1300</pubDate>
       
@@ -38,7 +30,7 @@
     </item>
     
     <item>
-      <title>Github Actions</title>
+      <title>github actions</title>
       <link>/categories/github-actions/</link>
       <pubDate>Tue, 08 Oct 2019 14:37:09 +1300</pubDate>
       
@@ -47,16 +39,16 @@
     </item>
     
     <item>
-      <title>Gotchas</title>
-      <link>/categories/gotchas/</link>
-      <pubDate>Fri, 07 Dec 2018 16:23:44 +1300</pubDate>
+      <title>static pages</title>
+      <link>/categories/static-pages/</link>
+      <pubDate>Tue, 08 Oct 2019 14:37:09 +1300</pubDate>
       
-      <guid>/categories/gotchas/</guid>
+      <guid>/categories/static-pages/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Heroku</title>
+      <title>heroku</title>
       <link>/categories/heroku/</link>
       <pubDate>Wed, 28 Aug 2019 14:59:38 +1200</pubDate>
       
@@ -65,34 +57,7 @@
     </item>
     
     <item>
-      <title>Jenkins</title>
-      <link>/categories/jenkins/</link>
-      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
-      
-      <guid>/categories/jenkins/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lambdas</title>
-      <link>/categories/lambdas/</link>
-      <pubDate>Fri, 07 Dec 2018 16:23:44 +1300</pubDate>
-      
-      <guid>/categories/lambdas/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>New Relic</title>
-      <link>/categories/new-relic/</link>
-      <pubDate>Wed, 21 Nov 2018 16:55:11 +1300</pubDate>
-      
-      <guid>/categories/new-relic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Setup</title>
+      <title>setup</title>
       <link>/categories/setup/</link>
       <pubDate>Fri, 05 Apr 2019 13:35:17 +1300</pubDate>
       
@@ -101,11 +66,47 @@
     </item>
     
     <item>
-      <title>Static Pages</title>
-      <link>/categories/static-pages/</link>
-      <pubDate>Tue, 08 Oct 2019 14:37:09 +1300</pubDate>
+      <title>dotnet</title>
+      <link>/categories/dotnet/</link>
+      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
       
-      <guid>/categories/static-pages/</guid>
+      <guid>/categories/dotnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jenkins</title>
+      <link>/categories/jenkins/</link>
+      <pubDate>Thu, 31 Jan 2019 12:59:49 +1300</pubDate>
+      
+      <guid>/categories/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gotchas</title>
+      <link>/categories/gotchas/</link>
+      <pubDate>Fri, 07 Dec 2018 16:23:44 +1300</pubDate>
+      
+      <guid>/categories/gotchas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>lambdas</title>
+      <link>/categories/lambdas/</link>
+      <pubDate>Fri, 07 Dec 2018 16:23:44 +1300</pubDate>
+      
+      <guid>/categories/lambdas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>new-relic</title>
+      <link>/categories/new-relic/</link>
+      <pubDate>Wed, 21 Nov 2018 16:55:11 +1300</pubDate>
+      
+      <guid>/categories/new-relic/</guid>
       <description></description>
     </item>
     

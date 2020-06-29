@@ -5,38 +5,38 @@
   <title>Technical Notes</title>
   
   
-  <link rel="stylesheet" href="../../scss/fonts.min.b4313f6b4ded7426646942ea7690be189339bfb5da0ce62edad9937c2061c373.css" integrity="sha256-tDE/a03tdCZkaULqdpC&#43;GJM5v7XaDOYu2tmTfCBhw3M=" media="screen">
-  <link rel="stylesheet" href="../../scss/main.min.24ff90a838ade019c712a6b79807bb507d1ca5c3089e0df06bd1359494854ac6.css" integrity="sha256-JP&#43;QqDit4BnHEqa3mAe7UH0cpcMIng3wa9E1lJSFSsY=" media="screen">
+  <link rel="stylesheet" href="../../scss/fonts.min.400e0950b6833e46b1d89610e316dcf84f628b1362e9a12a7f87fa84d14f5a52.css" integrity="sha256-QA4JULaDPkax2JYQ4xbc&#43;E9iixNi6aEqf4f6hNFPWlI=" media="screen">
+  <link rel="stylesheet" href="../../scss/main.min.cb52c8dd91c835651e6efb6d950cd0e0c9c0ff6bd4279f49340bb1af8a3aea63.css" integrity="sha256-y1LI3ZHINWUebvttlQzQ4MnA/2vUJ59JNAuxr4o66mM=" media="screen">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
   <body>
-    <div class="sidebar container">
+    <div class="wrapper">
+      <aside class="sidebar">
   <div class="sidebar__title">
-    <h1><a href="../../">t.notes</a></h1>
-    <br />
+    <h1><a class="header-link" href="../../">t.notes</a></h1>
     <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
   </div>
   <div class="sidebar__meta">
     <span>Built with Hugo.</span><br>
     <span>Powered by Github.</span>
   </div>
-</div>
+</aside>
 
-    <div class="header">
-  <div class="sidebar__title">
-    <h1><a href="../../">t.notes</a></h1>
+      <div class="header">
+  <div class="header__title">
+    <h1><a class="header-link" href="../../">t.notes</a></h1>
+    <a href="https://www.anncudis.com/">home</a> | <a href="https://www.anncudis.com/programmer/cv/">cv</a>
   </div>
 </div>
 
-    <div class="content container">
-      <div>
-        <div class="content__header"></div>
-        
+      <main class="container">
+        <section class="content">
+          
   
-    <section class="content__post">
-  <h1><a href="../../github-actions/trigger-gh-pages-build/">Triggering Github Pages Build using Github Actions</a></h1>
-  <span>
+    <article class="content__post summary">
+  <h1><a href="../../posts/trigger-gh-pages-build/">Triggering Github Pages Build using Github Actions</a></h1>
+  <div class="content__tags">
     10/08/2019,
     
       ci
@@ -47,72 +47,70 @@
     
       github actions
     
-  </span>
-  <div class="wurds">
-    <p>Recently, I&rsquo;ve been playing with <a href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">Github Actions</a> and the first thing that I&rsquo;ve thought of doing is how I can use Github Actions aka <strong>Steve</strong> (let&rsquo;s name it Steve because Github Actions is just too unfriendly! ) to deploy my statically-generated site to Github Pages. The current deployment workflow involves TravisCI handling the generation of static files and deploying them to the <code>gh-pages</code> branch using a <a href="https://docs.travis-ci.com/user/deployment/pages/">built-in configuration</a>.
-</p>
-    <a class="more-link" href="../../github-actions/trigger-gh-pages-build/"><nobr>Read more</nobr></a>
   </div>
-</section>
+  <div class="wurds">
+    <p>Recently, I&rsquo;ve been playing with <a href="https://help.github.com/en/categories/automating-your-workflow-with-github-actions">Github Actions</a> and the first thing that I&rsquo;ve thought of doing is how I can use Github Actions aka <strong>Steve</strong> (let&rsquo;s name it Steve because Github Actions is just too unfriendly! ) to deploy my statically-generated site to Github Pages. The current deployment workflow involves TravisCI handling the generation of static files and deploying them to the <code>gh-pages</code> branch using a <a href="https://docs.travis-ci.com/user/deployment/pages/">built-in configuration</a>.</p>
+    <a class="more-link link" href="../../posts/trigger-gh-pages-build/"><nobr>Read more</nobr></a>
+  </div>
+</article>
 
   
 
-      </div>
-      <div>
-  <div class="social-media-container">
-    TOPICS
-  </div>
-  <div class="topic-container">
-    <ul class="topics">
+        </section>
+        <section class="topics-sidebar">
+          <nav class="topic-container">
+  <h3>TOPICS</h3>
+  <ul class="topics">
+    
       
-        
-          <li><a href="../../categories/ci/">ci</a></li>
-        
+        <li><a href="../../categories/ci/">ci</a></li>
       
-        
-          <li><a href="../../categories/dotnet/">dotnet</a></li>
-        
+    
       
-        
-          <li><a href="../../categories/gh-pages/">gh-pages</a></li>
-        
+        <li><a href="../../categories/dotnet/">dotnet</a></li>
       
-        
-          <li><a href="../../categories/github-actions/">github-actions</a></li>
-        
+    
       
-        
-          <li><a href="../../categories/gotchas/">gotchas</a></li>
-        
+        <li><a href="../../categories/gh-pages/">gh-pages</a></li>
       
-        
-          <li><a href="../../categories/heroku/">heroku</a></li>
-        
+    
       
-        
-          <li><a href="../../categories/jenkins/">jenkins</a></li>
-        
+        <li><a href="../../categories/github-actions/">github-actions</a></li>
       
-        
-          <li><a href="../../categories/lambdas/">lambdas</a></li>
-        
+    
       
-        
-          <li><a href="../../categories/new-relic/">new-relic</a></li>
-        
+        <li><a href="../../categories/gotchas/">gotchas</a></li>
       
-        
-          <li><a href="../../categories/setup/">setup</a></li>
-        
+    
       
-        
-          <li><a href="../../categories/static-pages/">static-pages</a></li>
-        
+        <li><a href="../../categories/heroku/">heroku</a></li>
       
-    </ul>
-  </div>
-</div>
+    
+      
+        <li><a href="../../categories/jenkins/">jenkins</a></li>
+      
+    
+      
+        <li><a href="../../categories/lambdas/">lambdas</a></li>
+      
+    
+      
+        <li><a href="../../categories/new-relic/">new-relic</a></li>
+      
+    
+      
+        <li><a href="../../categories/setup/">setup</a></li>
+      
+    
+      
+        <li><a href="../../categories/static-pages/">static-pages</a></li>
+      
+    
+  </ul>
+</nav>
 
+        </section>
+      </main>
     </div>
   </body>
 </html>
