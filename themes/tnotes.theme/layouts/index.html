@@ -1,5 +1,5 @@
 {{ define "main" }}
-  {{ range first 10 .Data.Pages }}
+  {{ range first 10 .Site.RegularPages }}
     {{ partial "content-summary.html" . }}
   {{ end }}
 {{ end }}

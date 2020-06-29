@@ -1,0 +1,10 @@
+<nav class="topic-container">
+  <h3>TOPICS</h3>
+  <ul class="topics">
+    {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+      {{ with $.Site.GetPage (printf "/categories/%s" $name) }}
+        <li><a href="{{ .RelPermalink }}">{{ $name }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+</nav>

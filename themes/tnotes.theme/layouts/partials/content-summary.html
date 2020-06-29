@@ -1,13 +1,13 @@
-<section class="content__post">
+<article class="content__post summary">
   <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-  <span>
+  <div class="content__tags">
     {{ dateFormat "01/02/2006" .Date }},
     {{ range .Params.categories }}
       {{ . }}
     {{ end }}
-  </span>
+  </div>
   <div class="wurds">
     {{ .Summary }}
-    <a class="more-link" href="{{ .RelPermalink }}"><nobr>Read more</nobr></a>
+    <a class="more-link link" href="{{ .RelPermalink }}"><nobr>Read more</nobr></a>
   </div>
-</section>
+</article>

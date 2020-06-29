@@ -2,14 +2,17 @@
 <html>
   {{ partial "head.html" . }}
   <body>
-    {{ partial "left-sidebar.html" . }}
-    {{ partial "header.html" . }}
-    <div class="content container">
-      <div>
-        <div class="content__header"></div>
-        {{ block "main" . }}{{ end }}
-      </div>
-      {{ partial "right-sidebar.html" . }}
+    <div class="wrapper">
+      {{ partial "left-sidebar.html" . }}
+      {{ partial "header.html" . }}
+      <main class="container">
+        <section class="content">
+          {{ block "main" . }}{{ end }}
+        </section>
+        <section class="topics-sidebar">
+          {{ partial "topics-sidebar.html" . }}
+        </section>
+      </main>
     </div>
   </body>
 </html>

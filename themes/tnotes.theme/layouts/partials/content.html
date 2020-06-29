@@ -1,11 +1,12 @@
-<section class="content__post">
+<article class="content__post">
   {{ partial "nav-links.html" . }}
   <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-  <span>
+  <div class="content__tags">
     {{ dateFormat "12/01/2006" .Date }},
     {{ range .Params.categories }}{{ . }} {{ end }}
-  </span>
+  </div>
   <div class="wurds">
     {{ .Content }}
   </div>
-</section>
+  {{ partial "post-footer.html" . }}
+</article>
