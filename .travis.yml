@@ -8,7 +8,7 @@ python:
 #   - sudo dpkg --force-all -i libstdc++6
 
 install:
-  - wget -q -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.73.0/hugo_0.73.0_Linux-64bit.deb
+  - wget -q -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v0.73.0/hugo_extended_0.73.0_Linux-64bit.deb
   - sudo dpkg -i hugo.deb
   - pip install Pygments
   - rm -rf public 2> /dev/null
